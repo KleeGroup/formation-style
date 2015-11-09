@@ -39,6 +39,16 @@
 		.inline > div {
 			flex: 1;
 		}
+        .semantic-sample {
+            font-size: 22px !important;
+        }
+
+        .semantic-sample strong, .semantic-sample b, .semantic-sample em, .semantic-sample i, .semantic-sample u {
+            color:#78BAE6;
+        }
+        table tr td code {
+            color: white;
+        }
     </style>
 
     <!--[if lt IE 9]>
@@ -68,70 +78,151 @@
             </section>
 
             <section>
-                <section data-markdown>
-                    # Importez vos styles
-                    Trouver une image rigolote
-                    * au sein des pages HTML
-                    * dans des feuilles de style
-                    * de manière conditionnelle
+                <h1>Balises sémantiques</h1>
+                <pre style="font-size:14px;width:100%">
+                    <code style="html">
+<p>Lorem ipsum &lt;strong&gt;dolor&lt;/strong&gt; sit amet, consectetur adipiscing &lt;b&gt;elit&lt;/b&gt;. Vestibulum at molestie risus.
+Etiam nec est congue, &lt;em&gt;accumsan&lt;/em&gt; sapien quis, viverra justo. Class &lt;u&gt;aptent&lt;/u&gt;
+taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+Aliquam in malesuada felis. Sed &lt;i&gt;laoreet&lt;/i&gt; velit velit, eget dictum nibh suscipit vel.</p>
+                    </code>
+                </pre>
+                <p class="semantic-sample">
+                    Lorem ipsum <strong>dolor</strong> sit amet, consectetur adipiscing <b>elit</b>. Vestibulum at molestie risus.
+                    Etiam nec est congue, <em>accumsan</em> sapien quis, viverra justo. Class <u>aptent</u> taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                    Aliquam in malesuada felis. Sed <i>laoreet</i> velit velit, eget dictum nibh suscipit vel.
+                </p>
+            </section>
+
+            <section>
+                <section>
+                    <h1>Importez vos styles</h1>
+                    <ul>
+                        <li>au sein des pages HTML</li>
+                        <li>dans des feuilles de style</li>
+                        <li>de manière conditionnelle</li>
+                    </ul>
                 </section>
                 <section>
-                    <h1>Au sein des pages</h1>
-                    <ul>
+                    <h1 style="font-size:68px;">Au sein des pages</h1>
+                    <ul style="font-size:22px;">
                         <li>Import de feuille de style</li>
-                        <li>Embebed style</li>
-                        <li>Inline style</li>
+                        <li>Embebed style <i class="material-icons" style="color:red;font-size:20px;">error_outline</i></li>
+                        <li>Inline style <i class="material-icons" style="color:red;font-size:20px;">error_outline</i></li>
                     </ul>
-                    <blockquote>
-                        TODO : corriger le code HTML
-                        TODO ajouter du style inline
-                        TODO : ajouter dans les balises
-                    </blockquote>
-                    <pre>
+                    <pre style="font-size:14px;width:100%">
                         <code class='html'>
-                            <!DOCTYPE html>
-                            <html>
-                            <head>
-                                <meta charset="utf-8">
-                                <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                                <meta name="description" content="FOCUS Demo App by KleeGroup">
-                                <meta name="author" content="Klee Group">
-                                <title>Application de démo</title>
-                                <link rel="icon" type="image/png" href="focus.png" />
-                                <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-                                <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
-                            </head>
-                            <body>
-                                // le contenu de la page
-                            </body>
-                            </html>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Application de d&#233;mo&lt;/title&gt;
+    &lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; href=&quot;focus.png&quot; /&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;./styles/mes-styles.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;http://fonts.googleapis.com/css?family=Roboto:300,400,500,700&quot; type=&quot;text/css&quot;&gt;
+    &lt;style&gt;
+        body {
+            padding:0;
+            margin:0;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body style=&quot;border:1px solid red;&quot;&gt;
+    // le contenu de la page
+&lt;/body&gt;
+&lt;/html&gt;
                         </code>
                     </pre>
+                    <!--
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <meta charset="utf-8">
+                        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>Application de démo</title>
+                        <link rel="icon" type="image/png" href="focus.png" />
+                        <link rel="stylesheet" href="./styles/mes-styles.css">
+                        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+                        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+                        <style>
+                            body {
+                                padding:0;
+                                margin:0;
+                            }
+                        </style>
+                    </head>
+                    <body style="border:1px solid red;">
+                        // le contenu de la page
+                    </body>
+                    </html>
+                    -->
                 </section>
                 <section>
-                    <h1>Dans des feuilles de style</h1>
+                    <h1 style="font-size:84px;">Au sein des feuilles de style</h1>
                     <pre>
                         <code class="css">
-                            @import url('/Content/header.css');
-                            footer { background-color:green; }
+@import url('/Content/header.css');
+
+footer {
+    background-color:green;
+}
                         </code>
                     </pre>
                 </section>
-                <section data-markdown>
-                    # Styles conditionnels
-                    to complete
-                    [http://www.conditional-css.com/usage](http://www.conditional-css.com/usage)
+                <section>
+                    <h1 style="font-size:74px;">Styles conditionnels</h1>
+                    <div style="display:flex; align-items:center;">
+                        <div style="width:65%;">
+                            <pre align="left" style="font-size:14px;width:100%;">
+// Conditional-CSS syntax examples
+[if IE] - Used if the browser is IE
+[if ! Opera] - Used if the browser is not Opera
+[if IE 5] - Used if browser is IE 5
+[if lte IE 6] - Used if the browser is IE 6 or less (IE 5, IE 4 etc)
+[if ! gt IE 6] - Same effect as the previous statement, if not greater than IE 6
+                            </pre>
+                            <pre style="font-size:14px;width:100%">
+                                <code style="css">
+[if IE].container {
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	line-height: 2em;
+
+	[if gte IE 7]background: url('ie7.png') no-repeat center center;
+	[if lte IE 6]background: url('ie.jpg') no-repeat center center;
+}
+                                </code>
+                            </pre>
+                        </div>
+                        <div style="width:35%;">
+                            <img src="images/giphy/your-style.gif" />
+                        </div>
+                    </div>
+                    <a href="http://www.conditional-css.com/usage">http://www.conditional-css.com/usage</a>
                 </section>
             </section>
 
             <section>
                 <section>
                     <h1>Sélecteur CSS</h1>
-                    Qu'est une sélecteur CSS
-                </section><section>
-                    <h1>Elémentaires</h1>
-                    <table style="font-size:20px;">
+                    <pre>
+                        <code class="css">
+.carotte {
+    color: orange;
+    text-decoration: underline;
+    font-style: italic;
+}
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h1 style="font-size:82px;">Elémentaires</h1>
+                    <table style="font-size:18px;width:100%;">
                         <colgroup>
                             <col width="*">
                             <col width="140px">
@@ -149,25 +240,25 @@
                         <tbody>
                             <tr>
                                 <td align="center"><i class="material-icons" style="color:red;">warning</i></td>
-                                <td>*</td>
+                                <td><code>*</code></td>
                                 <td>Any element</td>
                                 <td align="center">2</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E</td>
+                                <td><code>E</code></td>
                                 <td>An element of type E</td>
                                 <td align="center">1</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E.warning</td>
+                                <td><code>E.warning</code></td>
                                 <td>An E element whose class attribute is "warning"</td>
                                 <td align="center">1</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E#myId</td>
+                                <td><code>E#myId</code></td>
                                 <td>An E element with ID equal to "myId"</td>
                                 <td align="center">1</td>
                             </tr>
@@ -175,8 +266,8 @@
                     </table>
                 </section>
                 <section>
-                    <h1>Combinaisons</h1>
-                    <table style="font-size:20px;">
+                    <h1 style="font-size:82px;">Combinaisons</h1>
+                    <table style="font-size:18px;width:100%;">
                         <colgroup>
                             <col width="*">
                             <col width="200px">
@@ -194,25 +285,25 @@
                         <tbody>
                             <tr>
                                 <td align="center"></td>
-                                <td>E F</td>
+                                <td><code>E F</code></td>
                                 <td>An F element descendant of an E element</td>
                                 <td align="center">1</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E > F</td>
+                                <td><code>E > F</code></td>
                                 <td>An F element child of an E element</td>
                                 <td align="center">2</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E + F</td>
+                                <td><code>E + F</code></td>
                                 <td>An F element immediately preceded by an E element</td>
                                 <td align="center">2</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E ~ F</td>
+                                <td><code>E ~ F</code></td>
                                 <td>An F element preceded by an E element</td>
                                 <td align="center">3</td>
                             </tr>
@@ -220,8 +311,8 @@
                     </table>
                 </section>
                 <section>
-                    <h1>Sur attributs</h1>
-                    <table style="font-size:20px;">
+                    <h1 style="font-size:82px;">Sur attributs</h1>
+                    <table style="font-size:18px;width:100%;">
                         <colgroup>
                             <col width="*">
                             <col width="160px">
@@ -239,63 +330,63 @@
                         <tbody>
                             <tr>
                                 <td align="center"></td>
-                                <td>E[foo]</td>
+                                <td><code>E[foo]</code></td>
                                 <td>an E element with a "foo" attribute</td>
                                 <td align="center">2</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E[foo="bar"]</td>
+                                <td><code>E[foo="bar"]</code></td>
                                 <td>an E element whose "foo" attribute value is exactly equal to "bar"</td>
                                 <td align="center">2</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E[foo~="bar"]</td>
+                                <td><code>E[foo~="bar"]</code></td>
                                 <td>an E element whose "foo" attribute value is a list of whitespace-separated values, one of which is exactly equal to "bar"</td>
                                 <td align="center">2</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E[foo^="bar"]</td>
+                                <td><code>E[foo^="bar"]</code></td>
                                 <td>an E element whose "foo" attribute value begins exactly with the string "bar"</td>
                                 <td align="center">3</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E[foo$="bar"]</td>
+                                <td><code>E[foo$="bar"]</code></td>
                                 <td>an E element whose "foo" attribute value ends exactly with the string "bar"</td>
                                 <td align="center">3</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E[foo*="bar"]</td>
+                                <td><code>E[foo*="bar"]</code></td>
                                 <td>an E element whose "foo" attribute value contains the substring "bar"</td>
                                 <td align="center">3</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E[foo|="en"]</td>
+                                <td><code>E[foo|="en"]</code></td>
                                 <td>an E element whose "foo" attribute has a hyphen-separated list of values beginning (from the left) with "en"</td>
                                 <td align="center">2</td>
                             </tr>
                         </tbody>
                     </table>
                     <pre>
-                        <code>
-                            table tbody tr td[align="center"] {
-                                text-align:center;
-                            }
+                        <code class="css">
+table tbody tr td[align="center"] {
+    text-align:center;
+}
                         </code>
                     </pre>
                 </section>
                 <section>
-                    <h1>Pseudo-classes (1/3)</h1>
-                    <blockquote>Expressions permettant classifier les éléments sur des caractéristiques qui ne peuvent pas être déduites du DOM</blockquote>
-                    <table style="font-size:20px;">
+                    <h1 style="font-size:82px;">Pseudo-classes (1/3)</h1>
+                    <blockquote align="left" style="font-size:26px;width:100%;">Expressions permettant classifier les éléments sur des caractéristiques qui ne peuvent pas être déduites du DOM</blockquote>
+                    <table style="font-size:18px;width:100%;">
                         <colgroup>
                             <col width="*">
-                            <col width="200px">
+                            <col width="230px">
                             <col width="*">
                             <col width="50px">
                         </colgroup>
@@ -310,40 +401,40 @@
                         <tbody>
                             <tr>
                                 <td align="center"></td>
-                                <td>E:root</td>
+                                <td><code>E:root</code></td>
                                 <td>an E element, root of the document</td>
-                                <td>3</td>
+                                <td align="center">3</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E:nth-child(n)</td>
+                                <td><code>E:nth-child(n)</code></td>
                                 <td>an E element, the n-th child of its parent</td>
-                                <td>3</td>
+                                <td align="center">3</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E:nth-last-child(n)</td>
+                                <td><code>E:nth-last-child(n)</code></td>
                                 <td>an E element, the n-th child of its parent, counting from the last one</td>
-                                <td>3</td>
+                                <td align="center">3</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E:nth-of-type(n)</td>
+                                <td><code>E:nth-of-type(n)</code></td>
                                 <td>an E element, the n-th sibling of its type</td>
-                                <td>3</td>
+                                <td align="center">3</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E:nth-last-of-type(n)</td>
+                                <td><code>E:nth-last-of-type(n)</code></td>
                                 <td>an E element, the n-th sibling of its type, counting from the last one</td>
-                                <td>3</td>
+                                <td align="center">3</td>
                             </tr>
                         </tbody>
                     </table>
                 </section>
                 <section>
-                    <h1>Pseudo-classes (2/3)</h1>
-                    <table style="font-size:20px;">
+                    <h1 style="font-size:82px;">Pseudo-classes (2/3)</h1>
+                    <table style="font-size:18px;width:100%;">
                         <colgroup>
                             <col width="*">
                             <col width="200px">
@@ -361,43 +452,43 @@
                         <tbody>
                             <tr>
                                 <td align="center"></td>
-                                <td>E:first-child</td>
+                                <td><code>E:first-child</code></td>
                                 <td>an E element, first child of its parent</td>
                                 <td align="center">2</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E:last-child</td>
+                                <td><code>E:last-child</code></td>
                                 <td>an E element, last child of its parent</td>
                                 <td align="center">3</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E:first-of-type</td>
+                                <td><code>E:first-of-type</code></td>
                                 <td>an E element, first sibling of its type</td>
                                 <td align="center">3</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E:last-of-type</td>
+                                <td><code>E:last-of-type</code></td>
                                 <td>an E element, last sibling of its type</td>
                                 <td align="center">3</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E:only-child</td>
+                                <td><code>E:only-child</code></td>
                                 <td>an E element, only child of its parent</td>
                                 <td align="center">3</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E:only-of-type</td>
+                                <td><code>E:only-of-type</code></td>
                                 <td>an E element, only sibling of its type</td>
                                 <td align="center">3</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E:empty</td>
+                                <td><code>E:empty</code></td>
                                 <td>an E element that has no children (including text nodes)</td>
                                 <td align="center">3</td>
                             </tr>
@@ -405,8 +496,8 @@
                     </table>
                 </section>
                 <section>
-                    <h1>Pseudo-classes (3/3)</h1>
-                    <table style="font-size:20px;">
+                    <h1 style="font-size:82px;">Pseudo-classes (3/3)</h1>
+                    <table style="font-size:18px;width:100%;">
                         <colgroup>
                             <col width="*">
                             <col width="160px">
@@ -424,67 +515,67 @@
                         <tbody>
                             <tr>
                                 <td align="center"></td>
-                                <td>E:link</td>
+                                <td><code>E:link</code></td>
                                 <td>an E element being the source anchor of a hyperlink of which the target is not yet visited (:link) or already visited (:visited)</td>
                                 <td align="center">1</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E:visited</td>
+                                <td><code>E:visited</code></td>
                                 <td>an E element during certain user actions</td>
                                 <td align="center">1</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E:active</td>
+                                <td><code>E:active</code></td>
                                 <td>an E element during certain user actions</td>
                                 <td align="center">1 and 2</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E:hover</td>
+                                <td><code>E:hover</code></td>
                                 <td>an E element during certain user actions</td>
                                 <td align="center">1 and 2</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E:focus</td>
+                                <td><code>E:focus</code></td>
                                 <td>an E element during certain user actions</td>
                                 <td align="center">1 and 2</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E:target</td>
+                                <td><code>E:target</code></td>
                                 <td>an E element being the target of the referring URI</td>
                                 <td align="center">3</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E:lang(fr)</td>
+                                <td><code>E:lang(fr)</code></td>
                                 <td>an element of type E in language "fr" (the document language specifies how language is determined)</td>
                                 <td align="center">2</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E:enabled</td>
+                                <td><code>E:enabled</code></td>
                                 <td>a user interface element E which is enabled or disabled</td>
                                 <td align="center">3</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E:disabled</td>
+                                <td><code>E:disabled</code></td>
                                 <td>a user interface element E which is enabled or disabled</td>
                                 <td align="center">3</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E:checked</td>
+                                <td><code>E:checked</code></td>
                                 <td>a user interface element E which is checked (for instance a radio-button or checkbox)</td>
                                 <td align="center">3</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E:not(s)</td>
+                                <td><code>E:not(s)</code></td>
                                 <td>an E element that does not match simple selector s</td>
                                 <td align="center">3</td>
                             </tr>
@@ -492,9 +583,9 @@
                     </table>
                 </section>
                 <section>
-                    <h1>Pseudo-éléments</h1>
-                    <blockquote>Pseudo-éléments : expressions offrant l’accès à de l’information, du contenu, qui n’est pas directement accessible via le DOM</blockquote>
-                    <table style="font-size:20px;">
+                    <h1 style="font-size:82px;">Pseudo-éléments</h1>
+                    <blockquote align="left" style="font-size:26px;width:100%;">Pseudo-éléments : expressions offrant l’accès à de l’information, du contenu, qui n’est pas directement accessible via le DOM</blockquote>
+                    <table style="font-size:18px;width:100%;">
                         <colgroup>
                             <col width="*">
                             <col width="200px">
@@ -512,25 +603,25 @@
                         <tbody>
                             <tr>
                                 <td align="center"></td>
-                                <td>E::first-line</td>
+                                <td><code>E::first-line</code></td>
                                 <td>the first formatted line of an E element</td>
                                 <td>1</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E::first-letter</td>
+                                <td><code>E::first-letter</code></td>
                                 <td>the first formatted letter of an E element</td>
                                 <td>1</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E::before</td>
+                                <td><code>E::before</code></td>
                                 <td>the first formatted letter of an E element</td>
                                 <td>2</td>
                             </tr>
                             <tr>
                                 <td align="center"></td>
-                                <td>E::after</td>
+                                <td><code>E::after</code></td>
                                 <td>generated content after an E element</td>
                                 <td>2</td>
                             </tr>
@@ -543,7 +634,7 @@
                     <h1>Priorité des sélecteurs</h1>
                 </section>
                 <section>
-                    <h1>Précédence</h1>
+                    <h1 style="font-size:82px;">Précédence</h1>
                     <blockquote>
                         <table style="font-size:20px;">
                             <tbody>
@@ -657,12 +748,16 @@
                         </tbody>
                     </table>
                 </section>
-                <section data-markdown>
-                    # Priroité
-                    En cas de conflit :
-                    1. `!important`
-                    2. Priorité / Précédence
-                    3. Ordre textuel
+                <section>
+                    <h1>Priorité</h1>
+                    <div align="left">En cas de conflit dans les styles :</div>
+                    <blockquote style="width:100%;">
+                        <ol>
+                            <li><code>!important</code></li>
+                            <li>Priorité / Précédence</li>
+                            <li>Ordre textuel</li>
+                        </ol>
+                    <blockquote>
                 </section>
                 <section data-markdown>
                     # Priorité
@@ -773,13 +868,114 @@ E {
                 </section>
             </section>
             <section>
-                <section data-markdown>
-                    # Floating
+                <section>
+                    <h1>Floating</h1>
+                    <div style="display:flex;align-items:center;">
+                        <div style="width:60%;">
+                            <blockquote align="left" style="font-size:22px;width:100%">
+                                <li>Empile les éléments de droite à gauche ou de droite à gauche</li>
+                                <li>Permet aux éléments proches de venir s’empiler autour</li>
+                                <li>Ne prend pas de place dans son conteneur parent</li>
+                                <li>Influence le contenu</li>
+                            </blockquote>
+                        </div>
+                        <div style="width:30%;padding:0 50px;">
+                            <img src="./images/float.png" />
+                        </div>
+                    </div>
+                    <a href="http://codepen.io/Tommass/pen/EVdJdr" target="_blank">http://codepen.io/Tommass/pen/EVdJdr</a>
+                </section>
+                <section>
+                    <h1>Floating</h1>
+                    <blockquote style="width:100%">
+                        <li>N’est pas considéré par le conteneur</li>
+                    </blockquote>
+                    <a href="http://codepen.io/Tommass/pen/XmxQQO" target="_blank">http://codepen.io/Tommass/pen/XmxQQO</a>
+                </section>
+                <section>
+                    <h1>Floating</h1>
+                    <blockquote style="width:100%">
+                        <li>Peut-être utilisé pour le template d'une page</li>
+                    </blockquote>
+                    <img src="./images/template-float.png" style="height:200px;" />
+                    <br/>
+                    <a href="http://codepen.io/Tommass/pen/ZbqZNq" target="_blank">http://codepen.io/Tommass/pen/ZbqZNq</a>
+                    <br/>
+                    <p style="font-size:25px;text-align:left;">
+                        <i class="material-icons" style="color:red;font-size:20px;">error_outline</i>&nbsp;&nbsp;Nouvelle propriété <code style="color:white;">display:flex</code> introduite par CSS3.<br/>
+                        <i class="material-icons" style="color:red;font-size:20px;">error_outline</i>&nbsp;&nbsp;Plutôt utiliser <code style="color:white;">position:absolute</code>.
+                    </p>
                 </section>
             </section>
             <section>
-                <section data-markdown>
-                    # Flexible box
+                <section>
+                    <h1 style="font-size:74px;">Flexible box</h1>
+                    <blockquote>
+                        Nouvelle propriété CSS 3 !
+                    </blockquote>
+                    <img src="./images/giphy/monica1.gif" style="height:200px;" />
+                    <pre>
+                        <code style="css">
+E {
+    display:flex;
+}
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h1 style="font-size:74px;">Flexible box</h1>
+                    <div style="display:flex;align-items:center;">
+                        <div style="width:50%;">
+                            <blockquote align="left" style="width:100%;font-size:22px;">
+                                <div>Permet dans de jouer plus facilement avec</div>
+                                <ul>
+                                    <li>le positionnent</li>
+                                    <li>l’orientation</li>
+                                    <li>l’ordre d’affichage</li>
+                                </ul>
+                                <div>Sans avoir à toucher au code HTML</div>
+                            </blockquote>
+                            <blockquote align="left" style="width:100%;font-size:22px;">
+                                <div>Remplace la combinaison des propriétés</div>
+                                <ul>
+                                    <li><code>position</code></li>
+                                    <li><code>display</code></li>
+                                    <li><code>float</code></li>
+                                </ul>
+                            </blockquote>
+                        </div>
+                        <div style="width:50%;padding:0 20px;">
+                            <img src="./images/flex.png" />
+                        </div>
+                    </div>
+                    <img src="./images/giphy/monica2.gif" style="height:200px;" />
+                </section>
+                <section>
+                    <h1 style="font-size:74px;">principales propriétés</h1>
+                    <br />
+                    <div>Un lien bien sympa !</div>
+                    <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a>
+                </section>
+                <section>
+                    <h1 style="font-size:74px;">Flexible box</h1>
+
+                    <a href="https://developer.mozilla.org/fr/docs/Web/Guide/CSS/Flexible_boxes" target="_blank">https://developer.mozilla.org/fr/docs/Web/Guide/CSS/Flexible_boxes</a>
+                </section>
+                <section>
+                    <h1 style="font-size:75px;">Can i use it ?</h1>
+                    <div style="display:flex;align-items:center;">
+                        <blockquote style="font-size:22px;">
+                            <div>YES ! YES ! YES !</div>
+                            <div>Utilisez cette propriété dans vos style CSS</div>
+                            <div>Surchargez les propriétés pour les vieux navigateurs si vous avez cette contrainte.</div>
+                        </blockquote>
+                        <div>
+                            <img src="./images/giphy/monica3.gif" style="height:180px;" />
+                        </div>
+                    </div>
+
+                    <img src="./images/ciu-flexbox.png" alt="Can i use flexbox ?" title="Can i use flexbox ?" />
+                    <a href="http://caniuse.com/#feat=flexbox">http://caniuse.com/#feat=flexbox</a>
                 </section>
             </section>
             <section>
