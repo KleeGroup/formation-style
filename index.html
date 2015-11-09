@@ -1310,14 +1310,76 @@ La fonction CSS calc() peut être utilisée à n'importe quel endroit ou une <co
                 </section>
             </section>
             <section>
-                <section data-markdown>
-                    # Unités
-
+                <section>
+                    <h1>Unités</h1>
+                    <table style="font-size:22px;">
+                        <thead>
+                            <tr>
+                                <th>Unit</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>%</code></td><td>percentage</td></tr>
+                            <tr><td><code>in</code></td><td>inch</td></tr>
+                            <tr><td><code>cm</code></td><td>centimeter</td></tr>
+                            <tr><td><code>mm</code></td><td>millimeter</td></tr>
+                            <tr><td><code>em</code></td><td>1em is equal to the current font size. 2em means 2 times the size of the current font. E.g., if an element is displayed with a font of 12 pt, then '2em' is 24 pt. The 'em' is a very useful unit in CSS, since it can adapt automatically to the font that the reader uses</td></tr>
+                            <tr><td><code>ex</code></td><td>one ex is the x-height of a font (x-height is usually about half the font-size)</td></tr>
+                            <tr><td><code>pt</code></td><td>point (1 pt is the same as 1/72 inch)</td></tr>
+                            <tr><td><code>pc</code></td><td>pica (1 pc is the same as 12 points)</td></tr>
+                            <tr><td><code>px</code></td><td>pixels (a dot on the computer screen)</td></tr>
+                        </tbody>
+                    </table>
                 </section>
             </section>
             <section>
-                <section data-markdown>
-                    # Animations
+                <h1>Animations</h1>
+                <section>
+                    <br/>
+                    <br/>
+                    <pre style="width:100%; font-size:16px;">
+                        <code class="css">
+header {
+    animation:animation-de-tom 5s;
+    -webkit-animation:animation-de-tom 5s;
+}
+
+@keyframes animation-de-tom {
+    0% 	{ background:red; }
+    10% { background:yellow; }
+    20% { background:blue; }
+    30% { background:green; }
+    40% { background:violet; }
+    50% { background:cyan; }
+    60% { background:magenta; }
+    70% { background:purple; }
+    80% { background:orange; }
+    90% { background:white; }
+    100% { background:red; }
+}
+                        </code>
+                    </pre>
+                    <div align="left" style="font-size:22px">
+                        <a href="http://codepen.io/Tommass/pen/epQmpe" target="_blank">http://codepen.io/Tommass/pen/epQmpe</a>
+                        <br/>
+                        <br/>
+                        Exemple complet avec flexbox, media query et animations :
+                        <a href="http://codepen.io/Tommass/pen/ZbmYWa" target="_blank">http://codepen.io/Tommass/pen/ZbmYWa</a>
+                    </div>
+                </section>
+                <section>
+                    <br/>
+                    <blockquote style="width:100%;font-size:28px;">
+                        Les animations doivent servir à jouer des <u>transitions</u> entre les états des votre SPA.
+                    </blockquote>
+                    <p align="left" style="width:100%;font-size:28px;">
+                        FOCUS va produire une bonne partie des transitions induites par les composants.
+                        Certaines IHM métiers nécessiteront des transitions personnalisées</p>
+
+                    <p align="left" style="width:100%;font-size:28px;">
+                        Des librairies existent pour vous faciliter la vie : <a href="https://daneden.github.io/animate.css/" targer="_blank">https://daneden.github.io/animate.css/</a>
+                    </p>
                 </section>
             </section>
             <section>
@@ -1335,9 +1397,13 @@ La fonction CSS calc() peut être utilisée à n'importe quel endroit ou une <co
             </section>
             <section>
                 <section data-markdown>
-                    # Have fun !
+                    # Beson de doc ?
 
-                    http://www.w3schools.com/cssref/
+                    ## La doc de Mozilla Developer Network
+                    https://developer.mozilla.org/fr/docs/Web/CSS
+
+                    ## sur Google
+                    `mdn` + `[mots clés]`
                 </section>
             </section>
 
