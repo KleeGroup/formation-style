@@ -1037,30 +1037,91 @@ E {
                     <pre style="font-size:14px;">
                         <code class="css">
 @font-face {
-    font-family: 'OpenSansLight';
-    src: url('../font/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
-    	url('../font/OpenSans-Light-webfont.woff') format('woff'),
-        url('../font/OpenSans-Light-webfont.ttf') format('truetype'),
-        url('../font/OpenSans-Light-webfont.svg#OpenSansLight') format('svg');
+    font-family: 'OpenSansRegular';
+    src: url('../font/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+    	url('../font/OpenSans-Regular-webfont.woff') format('woff'),
+        url('../font/OpenSans-Regular-webfont.ttf') format('truetype'),
+        url('../font/OpenSans-Regular-webfont.svg#OpenSansLight') format('svg');
     font-weight: normal;
     font-style: normal;
 }
-                        </code>
-                        <code class="css">
+
 html {
     font-family: 'OpenSansRegular', verdana, arial;
 }
                         </code>
                     </pre>
-                    <a href="http://caniuse.com/#feat=fontface">http://caniuse.com/#feat=fontface</a>
+                    <div align="left" style="font-size:26px;">
+                        <span>Est-ce que mon navigateur le supporte ?</span>
+                        <a href="http://caniuse.com/#feat=fontface">http://caniuse.com/#feat=fontface</a>
+                        <br/>
+                        <span>De la doc :</span>
+                        <a href="https://developer.mozilla.org/fr/docs/Web/CSS/@font-face">https://developer.mozilla.org/fr/docs/Web/CSS/@font-face</a>
+                    </div>
                 </section>
                 <section>
+                    Merci Google !<br />
                     <a href="https://www.google.com/fonts">https://www.google.com/fonts</a>
+                </section>
+                <section data-markdown>
+                    Import de librairie d'icons
+                    https://www.google.com/design/icons/
+                </section>
+                <section>
+                    <blockquote>
+                        Veiller à toujours importer livrer votre projet avec les fonts embedded dans votre application.
+                    </blockquote>
                 </section>
             </section>
             <section>
+                <h2>Media query</h2>
                 <section data-markdown>
-                    # Media query
+                    > L’attribut média permet de préciser le media sur lequel s’applique la CSS
+                </section>
+                <section>
+                    <br/>
+                    <br/>
+                    <h3>HTML</h3>
+                    <pre style="width:100%; font-size:16px;">
+                        <code class="html">
+<link type="text/css" rel="stylesheet" href="css/position-static.css" media="screen" />
+                        </code>
+                    </pre>
+                    <h3>Feuille de style</h3>
+                    <pre style="width:100%; font-size:16px;">
+                        <code class="css">
+@import url('/Content/header.css') screen;
+
+@media screen {
+	p.test {
+		font-family: verdana,sans-serif;
+		font-size: 14px;
+	}
+}
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <table style="font-size:20px;">
+                        <thead>
+                            <tr>
+                                <th>Media type</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>All</code></td><td>Used for all media type devices (default)</td></tr>
+                            <tr><td><code>aural</code></td><td>Used for speech and sound synthesizers</td></tr>
+                            <tr><td><code>braille</code></td><td>Used for braille tactile feedback devices</td></tr>
+                            <tr><td><code>embossed</code></td><td>Used for paged braille printers</td></tr>
+                            <tr><td><code>handheld</code></td><td>Used for small or handheld devices</td></tr>
+                            <tr><td><code>print</code></td><td>Used for printers</td></tr>
+                            <tr><td><code>projection</code></td><td>Used for projected presentations, like slides</td></tr>
+                            <tr><td><code>screen</code></td><td>Used for computer screens</td></tr>
+                            <tr><td><code>tty</code></td><td>Used for media using a fixed-pitch character grid, like teletypes and terminals</td></tr>
+                            <tr><td><code>tv</code></td><td>Used for television-type devices</td></tr>
+                        </tbody>
+                    </table>
                 </section>
                 <section>
                     <h3>Exemple</h3>
@@ -1074,6 +1135,40 @@ html {
                             <h4>Media print</h4>
                         </div>
                     </div>
+                </section>
+                <section>
+                    <br/>
+                    <br/>
+                    <h4>La balise <code>media</code> est utilisée pour définir des conditions</h4>
+                    <pre><code class="html" style="width:100%; font-size:18px;">media="screen, 3d-glasses, print and resolution > 90dpi“</code></pre>
+                    <br/>
+                    <h4>Dans la balise <code>HEAD</code></h4>
+                    <pre><code class="html" style="width:100%; font-size:14px;"><link type="text/css" rel="stylesheet" href="css/position-static.css" media="screen and resolution > 90px" /></code></pre>
+                    <br/>
+                    <h4>Dans la feuille de style</h4>
+                    <pre><code class="html" style="width:100%; font-size:18px;">@import url('/css/print-color.css') print and (color);
+
+@media screen and (orientation: portrait) { … }</code></pre>
+                </section>
+                <section>
+                    <h4>Plus concrètement de vos projets</h4>
+                    <pre><code class="css">@media screen and (min-width: 400px) and (max-width: 700px) {
+
+    /* le header est plus petit */
+    header {
+        height: 50px;
+    }
+
+    /* le footer disparait */
+    footer {
+        display:none;
+    }
+
+}</code></pre>
+                </section>
+                <section data-markdown>
+                    Plus d'infos ?
+                    https://developer.mozilla.org/fr/docs/Web/CSS/Media_queries
                 </section>
             </section>
             <section>
