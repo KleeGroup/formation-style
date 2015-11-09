@@ -1246,22 +1246,68 @@ div {
                     Generateur
                     <a href="http://www.cssmatic.com/box-shadow" target="_blank">http://www.cssmatic.com/box-shadow</a>
                 </section>
-                <section data-markdown>
-                    # Arrières plans
+                <section>
+                    <h2>Arrières plans</h2>
+                    <pre style="font-size:16px;">
+                        <code class="css">
+div {
+    background: url('https://i.chzbgr.com/full/8359208704/h660F24F2/');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0% 50%;
+}
+                        </code>
+                    </pre>
+                    <a href="http://codepen.io/Tommass/pen/epQYrg" target="_blank">http://codepen.io/Tommass/pen/epQYrg</a>
                 </section>
-                <section data-markdown>
-                    # Gestion de colonnes
-                    http://www.w3schools.com/cssref/tryit.asp?filename=trycss3_column-count
+                <section>
+                    <h2>Colonnes</h2>
+                    <pre style="font-size:16px;">
+                        <code class="css">
+.newspaper {
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+}
+                        </code>
+                    </pre>
+                    <a href="http://codepen.io/Tommass/pen/GpwRYL" target="_blank">http://codepen.io/Tommass/pen/GpwRYL</a>
                 </section>
-                <section data-markdown>
-                    # Traitement des images
-                    filtres
+                <section>
+                    <h2>Traitement des images</h2>
+                    <pre style="font-size:16px;">
+                        <code class="css">
+div {
+    background: /* top, transparent red, faked with gradient */
+    linear-gradient(
+    to bottom,
+    rgba(53, 58, 97, 0.64),
+    rgba(0,0,0, 0.64)
+    ),
+    url('https://i.chzbgr.com/full/8359208704/h660F24F2/');
+}
+                        </code>
+                    </pre>
+                    <a href="http://codepen.io/Tommass/pen/epQYrg" target="_blank">http://codepen.io/Tommass/pen/epQYrg</a>
                 </section>
-                <section data-markdown>
-                    # calc
-                    calc(100% - 3em)
+                <section>
+                    <h2>calc</h2>
+                    <blockquote align="left" style="width:100%; font-size:22px;">
+La fonction CSS calc() peut être utilisée à n'importe quel endroit ou une <code>longueur</code>, <code>frequency</code>, <code>angle</code>, <code>time</code>, <code>number</code>, ou <code>integer</code> est nécessaire. Grâce à calc(), il est possible de réaliser des calculs pour déterminer la valeur d'une propriété CSS.
+                    </blockquote>
+                    <pre style="font-size:16px;">
+                        <code class="css">
+.banniere {
+    position: absolute;
+    left: 40px;
+    width: 90%; /* valeur pour les navigateurs ne supportant pas calc() */
+    width: calc(100% - 80px);
+    border: solid black 1px;
+}
+                        </code>
+                    </pre>
+                    <a href="https://developer.mozilla.org/fr/docs/Web/CSS/calc" target="_blank">https://developer.mozilla.org/fr/docs/Web/CSS/calc</a>
                 </section>
-
             </section>
             <section>
                 <section data-markdown>
@@ -1277,6 +1323,7 @@ div {
             <section>
                 <section data-markdown>
                     # Transformation
+                    http://tobiasahlin.com/spinkit/
                 </section>
             </section>
             <section>
