@@ -25,12 +25,21 @@
 
     <!-- Printing and PDF exports -->
     <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
     </script>
+
+    <style>
+		.inline {
+			display: flex;
+		}
+		.inline > div {
+			flex: 1;
+		}
+    </style>
 
     <!--[if lt IE 9]>
     <script src="lib/js/html5shiv.js"></script>
@@ -557,7 +566,7 @@
                             </tbody>
                         </table>
                     </blockquote>
-                    <table style="font-size:21px">
+                    <table style="font-size:18px">
                         <colgroup>
                             <col width="300px" />
                             <col width="70px" />
@@ -587,7 +596,7 @@
                                 <td align="center" class="fragment" data-fragment-index="1">0</td>
                                 <td align="center" class="fragment" data-fragment-index="1">0</td>
                                 <td align="center" class="fragment" data-fragment-index="1">0</td>
-                                <td align="center" class="fragment" data-fragment-index="1"><span color="red">1</span></td>
+                                <td align="center" class="fragment" data-fragment-index="1" style="color:red;">1</td>
                             </tr>
                             <tr>
                                 <td><code>li:first-line {}</code></td>
@@ -649,29 +658,257 @@
                     </table>
                 </section>
                 <section data-markdown>
-                    # Priroité 
+                    # Priroité
                     En cas de conflit :
-                    * !important
-                    * Priorité / Précédence
-                    * Ordre textuel
+                    1. `!important`
+                    2. Priorité / Précédence
+                    3. Ordre textuel
                 </section>
                 <section data-markdown>
-                    # Priorité des feuilles de style
-                    3 feuilles de styles :
-                    * Feuille de style par défaut du navigateur
-                    * Feuille de style de l’utilisateur
-                    * Feuille de style du site internet
+                    # Priorité
+                    Les feuilles de style sont interprétées dans l'ordre suivant :
+                    1. Feuille de style du navigateur
+                    2. Feuille de style de l’utilisateur
+                    3. Feuille de style du site internet
                 </section>
                 <section data-markdown>
                     # Ordre d'évaluation
-                    * Feuille de style du navigateur
-                    * Feuille de style de l’utilisateur
-                    * Feuille de style du site internet
-                    * !important du site internet
-                    * !important de l’utilisateur
+                    1. Feuille de style du navigateur
+                    2. Feuille de style de l’utilisateur
+                    3. Feuille de style du site internet
+                    4. `!important` du site internet
+                    5. `!important` de l’utilisateur
                 </section>
             </section>
 
+            <section>
+                <section data-markdown>
+                    # Box model
+                    ![Box model](./images/box-model.png)
+                </section>
+            </section>
+
+            <section>
+                <section data-markdown>
+                    # Focus sur des notions importantes du CSS
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h1>position dans le flux</h1>
+                    <blockquote align="left" style="font-size:24px;width:100%;">
+                        <div>Définit le positionnement d'un élément par rapport :</div>
+                        <ul>
+                            <li>aux limites de la zone d'affichage</li>
+                            <li>aux limites de son conteneur</li>
+                            <li>au flux HTML</li>
+                        </ul>
+                    </blockquote>
+                    <pre>
+                        <code class="css">
+E {
+    position: static | relative | absolute | fixed;
+}
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h1 style="font-size:78px"><code>{position: static}</code></h1>
+                    <blockquote align="left" style="font-size:24px;width:100%;">
+                        <div>C'est la valeur par défaut affectée à chaque éléments du flux HTML.</div>
+                        <div>L’élément est affiché selon l’ordre du flux et de conteneur.</div>
+                    </blockquote>
+                    <a href="http://codepen.io/anon/pen/PPyXeG" target="_blank">http://codepen.io/anon/pen/PPyXeG</a>
+                </section>
+                <section>
+                    <h1 style="font-size:78px"><code>{position: relative}</code></h1>
+                    <blockquote align="left" style="font-size:24px;width:100%;">
+                        <div>Affiche l’élément par rapport à son conteneur parent.</div>
+                        <div>L’élément est affiché selon l’ordre du flux et de conteneur.</div>
+                    </blockquote>
+                    <a href="http://codepen.io/Tommass/pen/PPyVEQ" target="_blank">http://codepen.io/Tommass/pen/PPyVEQ</a>
+                </section>
+                <section>
+                    <h1 style="font-size:78px"><code>{position: absolute}</code></h1>
+                    <blockquote align="left" style="font-size:24px;width:100%;">
+                        <div>L'élement est retiré du flux.</div>
+                        <div>Il se positionne :</div>
+                        <ul>
+                            <li>Au niveau du conteneur parent ayant une position <code style="color:red;">relative</code> ou <code style="color:red;">absolute</code></li>
+                            <li>A defaut, par rapport au conteneur principal : le navigateur</li>
+                        </ul>
+                    </blockquote>
+                    <div style="display:flex;">
+                        <div align="left" style="font-size:22px; width:50%;">
+                            <div>Exemple d'utilisation :</div>
+                            <ul>
+                                <li>footer</li>
+                                <li>template de pages avec colonnes</li>
+                            </ul>
+                        </div>
+                        <div align="right" style="width:50%;">
+                            <img src="./images/template-absolute.png" style="height:200px;" />
+                        </div>
+                    </div>
+                    <a href="http://codepen.io/Tommass/pen/GpYeZX" target="_blank">http://codepen.io/Tommass/pen/GpYeZX</a>
+                </section>
+                <section>
+                    <h1 style="font-size:78px"><code>{position: fixed}</code></h1>
+                    <blockquote align="left" style="font-size:24px;width:100%;">
+                        <ul>
+                            <li>Le contenu est retiré du flux</li>
+                            <li>Il se positionne toujours par rapport à la partie visible du navigateur</li>
+                            <li>Sa position est fixe à l'écran, le scroll n’agit pas sur l’élément qui reste toujours au même endroit</li>
+                        </ul>
+                    </blockquote>
+                    <div align="left" style="font-size:22px;">
+                        <div>Exemple d'utilisation</div>
+                        <ul>
+                            <li>Header fixe (comme sur facebook, twitter, focus, ...)</li>
+                            <li>Footer fixe</li>
+                        </ul>
+                    </div>
+                    <a href="http://codepen.io/Tommass/pen/GpYeZX" target="_blank">http://codepen.io/Tommass/pen/GpYeZX</a>
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # Floating
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # Flexible box
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # Font
+                    google font
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # Media query
+                </section>
+                <section>
+                    <h3>Exemple</h3>
+                    <div class='inline'>
+                        <div>
+                            <img data-src='images/radar-web.png' style="height:230px" />
+                            <h4>Media screen</h4>
+                        </div>
+                        <div>
+                            <img data-src='images/radar-print.png' style="height:230px" />
+                            <h4>Media print</h4>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # Améliorations CSS3
+                </section>
+                <section data-markdown>
+                    # Text wrapping
+                </section>
+                <section data-markdown>
+                    # Opacité
+                </section>
+                <section data-markdown>
+                    # Saturation & luminosité
+                </section>
+                <section data-markdown>
+                    # bordure arrondies
+                </section>
+                <section data-markdown>
+                    # Dégradés de couleur
+                </section>
+                <section data-markdown>
+                    # Ombres
+                </section>
+                <section data-markdown>
+                    # Arrières plans
+                </section>
+                <section data-markdown>
+                    # Gestion de colonnes
+                    http://www.w3schools.com/cssref/tryit.asp?filename=trycss3_column-count
+                </section>
+                <section data-markdown>
+                    # Traitement des images
+                    filtres
+                </section>
+                <section data-markdown>
+                    # calc
+                    calc(100% - 3em)
+                </section>
+
+            </section>
+            <section>
+                <section data-markdown>
+                    # Unités
+
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # Animations
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # Transformation
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # Can i use ?
+
+                    http://caniuse.com/
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # Have fun !
+
+                    http://www.w3schools.com/cssref/
+                </section>
+            </section>
+
+            <section>
+                <section data-markdown>
+                    # Material Design Lite
+                    * intérets
+                        * remplaçant de boostrap
+                        * homogéinise les styles pour tous les navigateurs
+                        * conventions de nommage
+                    * composants matérial tout prêts
+                    * grid
+                </section>
+            </section>
+
+            <section>
+                <section data-markdown>
+                    # SASS
+
+                    * split des fichiers
+                    * orienté composants
+                    * arborescence des css
+                    * variable
+                    * mixins
+                </section>
+            </section>
+
+            <section>
+                <section data-markdown>
+                    # Bonnes pratiques
+
+                    utiliser au minimum les specificités (.class) (#id)
+                    dans une approche composant, utiliser l'attribut data-
+
+                </section>
+            </section>
         </div>
     </div>
 
