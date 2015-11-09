@@ -7,7 +7,7 @@
     <title>FOCUS - Les bases pour styler vos applications</title>
 
     <meta name="description" content="Formation destinée à pousser les bonnes pratiques CSS/SASS pour des développements FOCUS">
-    <meta name="author" content="Thomas GALLON">
+    <meta name="author" content="Don GALLON-Lopez">
 
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -1254,14 +1254,158 @@ html {
             </section>
 
             <section>
-                <section data-markdown>
-                    # SASS
+                <section data-section='sass-title' data-background='http://sass-lang.com/assets/img/illustrations/glasses-2087d741.svg'>
+                    <h1>SASS</h1>
+                </section>
+                <section data-section='sass-sommaire'>
 
-                    * split des fichiers
-                    * orienté composants
-                    * arborescence des css
-                    * variable
-                    * mixins
+                    <h2>A quoi ca sert ? / Comment ça marche ?</h2>
+                    <ul>
+                        <li>Problème de maintenabilité avec le CSS</li>
+                        <li>Structure le style d'une application</li>
+                        <li>Pas de variables en CSS ?</li>
+                        <li>Industrialisation du style / réutilisation</li>
+                        <li>On peut écrire du CSS directement</li>
+                        <li>Transpile vers le CSS</li>
+                    </ul>
+
+                </section>
+                <section data-section='sass-accroche'>
+
+                    <h2>Quelques fonctionnalités sympas</h2>
+
+                </section>
+                <section data-section='sass--variables'>
+                    <h2>Les variables <code>$</code></h2>
+                    <div style="display: flex; justify-content: center;">
+                        <div >
+                            <h3>SASS</h3>
+                            <pre style="font-size:14px;">
+                                <code class="scss">
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+                                </code>
+                            </pre>
+                        </div>
+                        <div >
+                            <h3>CSS</h3>
+                                <pre style="font-size:14px;">
+                                    <code class="css">
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+                                    </code>
+                                </pre>
+                        </div>
+                    </div>
+                </section>
+                <section data-section='sass--nesting'>
+                    <h2>Le nesting</h2>
+                    <div style="display: flex; justify-content: center;">
+                        <div >
+                            <h3>SASS</h3>
+                            <pre style="font-size:14px;">
+                                <code class="scss">
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li { display: inline-block; }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}
+                                </code>
+                            </pre>
+                        </div>
+                        <div >
+                            <h3>CSS</h3>
+                                <pre style="font-size:14px;">
+                                    <code class="css">
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+                                    </code>
+                                </pre>
+                        </div>
+                    </div>
+                </section>
+                <section data-section='sass--mixins'>
+                    <h2>Les mixins</h2>
+                    <div style="display: flex; justify-content: center;">
+                        <div >
+                            <h3>SASS</h3>
+                            <pre style="font-size:14px;">
+                                <code class="scss">
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+.box { @include border-radius(10px); }
+                                </code>
+                            </pre>
+                        </div>
+                        <div >
+                            <h3>CSS</h3>
+                                <pre style="font-size:14px;">
+                                    <code class="css">
+.box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+                                    </code>
+                                </pre>
+                        </div>
+                    </div>
+                </section>
+                <section data-section='sass--fichiers'>
+                    <h2>Possibilité de split en plusieurs fichiers</h2>
+                    <p>On importe un fichier avec <code>@import 'monFichier';</code></p>
+                    <ul>
+                        <li>Meilleure séparation</li>
+                        <li>Réutilisation de certains éléments (variables, mixins, ...)</li>
+                        <li>Utilisation de librairies externes</li>
+                        <li>Industrialisation dans les projets</li>
+                        <li>Code CSS orienté <strong>COMPOSANT</strong></li>
+                    </ul>
+                </section>
+                <section datat-section='sass--conclusion'>
+
+                    <h2>Ce qu'il faut retenir</h2>
+                    <blockquote>
+                    On travaille avec une logique variables + composants et on ne se prive pas du nesting et des variables.
+                    On écrit pas de fichiers CSS.
+                    </blockquote>
+                    <a href='http://sass-lang.com/guide'>La doc</a>
                 </section>
             </section>
 
