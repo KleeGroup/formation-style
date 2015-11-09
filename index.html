@@ -129,6 +129,7 @@ Aliquam in malesuada felis. Sed &lt;i&gt;laoreet&lt;/i&gt; velit velit, eget dic
             margin:0;
         }
     &lt;/style&gt;
+    &lt;!--[if IE 7]&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;screen-ie7.css&quot; /&gt;&lt;![endif]--&gt;
 &lt;/head&gt;
 &lt;body style=&quot;border:1px solid red;&quot;&gt;
     // le contenu de la page
@@ -210,15 +211,25 @@ footer {
             <section>
                 <section>
                     <h1>Sélecteur CSS</h1>
-                    <pre>
+                    <pre style="font-size:16px;">
+                        <code class="html">
+<p>Les <span class="carotte">carottes</span> sont cuites.</p>
+<div>Les <span class="carotte">carottes</span> sont cuites.</div>
+                        </code>
+                    </pre>
+                    <pre style="font-size:16px;">
                         <code class="css">
-.carotte {
+p .carotte {
     color: orange;
     text-decoration: underline;
     font-style: italic;
 }
                         </code>
                     </pre>
+                    <blockquote style="font-size:18px;">
+                        <p>Les <span style="color:orange;text-decoration:underline;font-style:italic;">carottes</span> sont cuites.</p>
+                        <div>Les <span>carottes</span> sont cuites.</div>
+                    </blockquote>
                 </section>
                 <section>
                     <h1 style="font-size:82px;">Elémentaires</h1>
@@ -264,6 +275,22 @@ footer {
                             </tr>
                         </tbody>
                     </table>
+                    <pre style="font-size:16px;">
+                        <code class="html">
+<p>Paragraphe</p>
+<p id="bleu">Paragraphe bleu</p>
+                        </code>
+                    </pre>
+                    <pre style="font-size:16px;">
+                        <code class="css">
+p {
+    color: green;
+}
+p#bleu {
+    color: blue;
+}
+                        </code>
+                    </pre>
                 </section>
                 <section>
                     <h1 style="font-size:82px;">Combinaisons</h1>
@@ -309,6 +336,21 @@ footer {
                             </tr>
                         </tbody>
                     </table>
+                    <pre style="font-size:16px;">
+                        <code class="html">
+<div>
+    <span>Hey !</span>
+    <p>Les carottes sont <span>cuites</span></p>
+</div>
+                        </code>
+                    </pre>
+                    <pre style="font-size:16px;">
+                        <code class="css">
+div > span {
+    color: red;
+}
+                        </code>
+                    </pre>
                 </section>
                 <section>
                     <h1 style="font-size:82px;">Sur attributs</h1>
@@ -868,8 +910,8 @@ E {
                 </section>
             </section>
             <section>
+                <h2>Floating</h2>
                 <section>
-                    <h1>Floating</h1>
                     <div style="display:flex;align-items:center;">
                         <div style="width:60%;">
                             <blockquote align="left" style="font-size:22px;width:100%">
@@ -886,14 +928,12 @@ E {
                     <a href="http://codepen.io/Tommass/pen/EVdJdr" target="_blank">http://codepen.io/Tommass/pen/EVdJdr</a>
                 </section>
                 <section>
-                    <h1>Floating</h1>
                     <blockquote style="width:100%">
                         <li>N’est pas considéré par le conteneur</li>
                     </blockquote>
                     <a href="http://codepen.io/Tommass/pen/XmxQQO" target="_blank">http://codepen.io/Tommass/pen/XmxQQO</a>
                 </section>
                 <section>
-                    <h1>Floating</h1>
                     <blockquote style="width:100%">
                         <li>Peut-être utilisé pour le template d'une page</li>
                     </blockquote>
@@ -957,8 +997,8 @@ E {
                     <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a>
                 </section>
                 <section>
-                    <h1 style="font-size:74px;">Flexible box</h1>
-
+                    <h1 style="font-size:74px;">Responsive plus simple !</h1>
+                    <img src="./images/flex2.png" />
                     <a href="https://developer.mozilla.org/fr/docs/Web/Guide/CSS/Flexible_boxes" target="_blank">https://developer.mozilla.org/fr/docs/Web/Guide/CSS/Flexible_boxes</a>
                 </section>
                 <section>
@@ -973,15 +1013,49 @@ E {
                             <img src="./images/giphy/monica3.gif" style="height:180px;" />
                         </div>
                     </div>
-
                     <img src="./images/ciu-flexbox.png" alt="Can i use flexbox ?" title="Can i use flexbox ?" />
                     <a href="http://caniuse.com/#feat=flexbox">http://caniuse.com/#feat=flexbox</a>
                 </section>
+                <section>
+                    <h1>Quand l'utiliser ?</h1>
+                    <blockquote style="width:100%;">
+                        <ul>
+                            <li>Structure d'une page</li>
+                            <li>Onglets</li>
+                            <li>Menus</li>
+                            <li>Center un élément verticalement dans son container</li>
+                        </ul>
+                    </blockquote>
+                </section>
             </section>
             <section>
-                <section data-markdown>
-                    # Font
-                    google font
+                <h2>Font</h2>
+                <section>
+                    <img src="./images/font.png" />
+                </section>
+                <section>
+                    <pre style="font-size:14px;">
+                        <code class="css">
+@font-face {
+    font-family: 'OpenSansLight';
+    src: url('../font/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+    	url('../font/OpenSans-Light-webfont.woff') format('woff'),
+        url('../font/OpenSans-Light-webfont.ttf') format('truetype'),
+        url('../font/OpenSans-Light-webfont.svg#OpenSansLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+                        </code>
+                        <code class="css">
+html {
+    font-family: 'OpenSansRegular', verdana, arial;
+}
+                        </code>
+                    </pre>
+                    <a href="http://caniuse.com/#feat=fontface">http://caniuse.com/#feat=fontface</a>
+                </section>
+                <section>
+                    <a href="https://www.google.com/fonts">https://www.google.com/fonts</a>
                 </section>
             </section>
             <section>
