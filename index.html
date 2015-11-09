@@ -1463,6 +1463,63 @@ nav a {
             </section>
 
             <section>
+                <section data-section='best-practice--title' data-background='https://media.giphy.com/media/12fWLm0gSY8kJa/giphy.gif'>
+                    <h1>Best practices</h1>
+                </section>
+                <section data-section='best-practice--variables'>
+                        <h2>on se fait un fichier <code>_variables.scss</code></h2>
+                        <p>Avec ses couleurs, des polices et autres paramètres globaux...</p>
+                </section>
+                <section data-section='best-practice--composante'>
+                        <h2>On a une logique composant </h2>
+
+                        <ul>
+                            <li>On a un fichier par composant (dans le même dossier que le composant)</li>
+                            <li>On utlise des selecteurs <code>data-project</code>, pas de <code>class, id</code></li>
+                            <li>On utilise le nesting et le <code>&</code></li>
+                        </ul>
+                        <pre>
+                            <code class='scss'>
+[data-focus='select'] {
+    select {
+        border-top:0;
+        border-left:0;
+        border-right: 0;
+        border-bottom: 1px solid $select-border-color;
+        padding: 3px 3px 3px 0;
+        color: $select-text-color;
+    }
+    ...
+}
+                            </code>
+                        </pre>
+                </section>
+                <section data-section='best-practice--variables'>
+                        <h2>On utilise au maximum les propriétés CSS récentes</h2>
+                        <p>On gère au cas pas cas les problèmes spécifiques avec des styles conditionnels, on présente au client un mode dégradé graphiquement pour les vieux browsers...</p>
+
+                </section>
+                <section data-section='best-practice--variables'>
+                        <h2>On ne surcharge jamais les librairies</h2>
+                        <ul>
+                            <li> On rend le code moins lisibles, moins robuste aux changements de versions , ...</li>
+                            <li> On utilise un sélecteur un précis relatif au <code>data-project='my-component'</code>.</li>
+
+                        </ul>
+                </section>
+                <section data-section='best-practice--browseer'>
+                        <h2>on afficher une page pour les navigateurs non suportés</h2>
+
+                </section>
+
+                <section data-section='best-practice--flexbow'>
+                        <h2>On utilise au maximum les flexbox</h2>
+                        <p>Parce que c'est de la bombe...</p>
+
+                </section>
+
+
+
                 <section data-markdown>
                     # Bonnes pratiques
 
@@ -1471,6 +1528,7 @@ nav a {
 
                 </section>
             </section>
+
         </div>
     </div>
 
