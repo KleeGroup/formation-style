@@ -40,7 +40,7 @@
 			flex: 1;
 		}
         .semantic-sample {
-            font-size: 22px !important;
+            font-size: 18px !important;
         }
 
         .semantic-sample strong, .semantic-sample b, .semantic-sample em, .semantic-sample i, .semantic-sample u {
@@ -79,6 +79,7 @@
 
             <section>
                 <h1>Balises sémantiques</h1>
+                <img src="./images/semantic.png" style="height:200px;" />
                 <pre style="font-size:14px;width:100%">
                     <code style="html">
 <p>Lorem ipsum &lt;strong&gt;dolor&lt;/strong&gt; sit amet, consectetur adipiscing &lt;b&gt;elit&lt;/b&gt;. Vestibulum at molestie risus.
@@ -1383,9 +1384,51 @@ header {
                 </section>
             </section>
             <section>
-                <section data-markdown>
-                    # Transformation
-                    http://tobiasahlin.com/spinkit/
+                <h1>Transformation</h1>
+                <section>
+                    <br />
+                    <br />
+                    <br />
+                    <div style="display:flex;align-items:center;">
+                        <pre style="font-size:16px;width:70%;">
+                            <code class="css">
+.bouton {
+    /* définit l'origine de la transformation: ici le centre du bouton */
+	transform-origin:0% 0%;
+	-ms-transform-origin:0% 0%;
+	-webkit-transform-origin:0% 0%;
+	-moz-transform-origin:0% 0%;
+	-o-transform-origin:0% 0%;
+
+    /* la transformation : une rotation de 90 degrés */
+    transform:rotate(-90deg);
+    -ms-transform:rotate(-90deg);
+    -webkit-transform:rotate(-90deg);
+    -moz-transform:rotate(-90deg);
+    -o-transform:rotate(-90deg);
+}
+                            </code>
+                        </pre>
+                        <div style="width:30%; padding:0 20px;">
+                            <img src="./images/transform.png" />
+                        </div>
+                    </div>
+                    <div style="font-size:22px;">
+                        <div><a href="https://developer.mozilla.org/fr/docs/Web/CSS/transform" target="_blank">https://developer.mozilla.org/fr/docs/Web/CSS/transform</a></div>
+                        <div><a href="http://www.alsacreations.com/article/lire/1418-css3-transformations-2d.html" target="_blank">http://www.alsacreations.com/article/lire/1418-css3-transformations-2d.html</a></div>
+                    </div>
+                </section>
+                <section>
+                    <br/>
+                    <br/>
+                    <div style="font-size:26px">Dans le cadre des projets FOCUS, les transformations seront peu utilisées.</div>
+                    <blockquote align="left" style="width:100%; font-size:26px;">
+                        Combinées aux animations, elles peuvent être utilisées pour générer des éléments graphiques dynamiques.<br/>
+                        <br/>
+                        Par exemple, les spinners : <a href="http://tobiasahlin.com/spinkit/" target="_blank">http://tobiasahlin.com/spinkit/</a>.<br/>
+                        <br/>
+                        Ne pas réinventer la roue : utilisez des librairies CSS du marché.
+                    </blockquote>
                 </section>
             </section>
             <section>
@@ -1408,16 +1451,70 @@ header {
             </section>
 
             <section>
+                <h1 style="color:#4A7096;">Material Design</h1>
                 <section data-section='mdl-title' data-background='https://media.giphy.com/media/14rrs4hUiOSZ5C/giphy.gif'>
-                    <h1 style="color:#4A7096;">Material Design Lite</h1>
+
                 </section>
                 <section>
-                    * intérets
-                        * remplaçant de boostrap
-                        * homogéinise les styles pour tous les navigateurs
-                        * conventions de nommage
-                    * composants matérial tout prêts
-                    * grid
+                    <br/>
+                    <br/>
+                    <h2>C'est quoi ?</h2>
+                    <blockquote style="width:100%;">
+                        <b>Des spécifications pour la conception d'interfaces</b>
+                    </blockquote>
+                    <ul align="left" style="font-size:26px;">
+                        <li>Guidelines</li>
+                        <li>Bonnes pratiques</li>
+                        <li>Do / Don't</li>
+                        <li>UX / UI</li>
+                    </ul>
+                    <br/>
+                    <br/>
+                    <div style="font-size:26px;">
+                        <a href="https://www.google.com/design/spec/material-design/introduction.html" target="_blank">https://www.google.com/design/spec/material-design/introduction.html</a>
+                    </div>
+                </section>
+                <section>
+                    <br/>
+                    <br/>
+                    <h2>Concrètement dans mon projet ?</h2>
+                    <blockquote style="width:100%;">
+                        <ul>
+                            <li>Des règles de conception à respecter.</li>
+                            <li>Une libraire graphique et quelques bonnes pratiques</li>
+                        </ul>
+                    </blockquote>
+                    <br/>
+                    <a href="http://www.getmdl.io/" target="_blank">http://www.getmdl.io/</a>
+                </section>
+                <section>
+                    <br/>
+                    <br/>
+                    <h2>Mais pourquoi ?</h2>
+                    <blockquote style="width:100%;">
+                        Parce que cela présente de nombreux intérêts pour nous...
+                    </blockquote>
+                    <ul align="left" style="font-size:26px;">
+                        <li>interfaces modernes dans l'ère du temps</li>
+                        <li>incluent des usages très répandus</li>
+                        <li>bénéfices des études d'un géant du web à moindre coût</li>
+                        <li>applications d'un SI homogènotes</li>
+                    </ul>
+                </section>
+                <section>
+                    <br/>
+                    <br/>
+                    <h2>Et aussi...</h2>
+                    <ul align="left" style="font-size:26px;">
+                        <li>remplaçant de bootsrap</li>
+                        <li>libraire graphique légère</li>
+                        <li>composants Material tout prêts</li>
+                        <li>librairie d'icones</li>
+                    </ul>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <a href="https://www.google.com/design/icons/" target="_blank">https://www.google.com/design/icons/</a>
                 </section>
             </section>
 
