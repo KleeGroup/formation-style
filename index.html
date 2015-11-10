@@ -911,30 +911,31 @@ E {
                 </section>
             </section>
             <section>
-                <h2>Floating</h2>
+                <h1>Floating</h1>
                 <section>
-                    <div style="display:flex;align-items:center;">
-                        <div style="width:60%;">
-                            <blockquote align="left" style="font-size:22px;width:100%">
-                                <li>Empile les éléments de droite à gauche ou de droite à gauche</li>
-                                <li>Permet aux éléments proches de venir s’empiler autour</li>
-                                <li>Ne prend pas de place dans son conteneur parent</li>
-                                <li>Influence le contenu</li>
-                            </blockquote>
-                        </div>
-                        <div style="width:30%;padding:0 50px;">
-                            <img src="./images/float.png" />
-                        </div>
-                    </div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <img src="./images/float.png" style="height:200px;" />
+                    <blockquote align="left" style="font-size:26px;width:100%">
+                        <li>Empile les éléments de droite à gauche ou de droite à gauche</li>
+                        <li>Permet aux éléments proches de venir s’empiler autour</li>
+                        <li>Ne prend pas de place dans son conteneur parent</li>
+                        <li>Influence le contenu</li>
+                    </blockquote>
                     <a href="http://codepen.io/Tommass/pen/EVdJdr" target="_blank">http://codepen.io/Tommass/pen/EVdJdr</a>
                 </section>
                 <section>
+                    <div><i class="material-icons" style="font-size:74px; color:red;">warning</i></div>
                     <blockquote style="width:100%">
                         <li>N’est pas considéré par le conteneur</li>
                     </blockquote>
                     <a href="http://codepen.io/Tommass/pen/XmxQQO" target="_blank">http://codepen.io/Tommass/pen/XmxQQO</a>
                 </section>
                 <section>
+                    <br/>
+                    <br/>
+                    <br/>
                     <blockquote style="width:100%">
                         <li>Peut-être utilisé pour le template d'une page</li>
                     </blockquote>
@@ -1015,7 +1016,7 @@ E {
                         </div>
                     </div>
                     <img src="./images/ciu-flexbox.png" alt="Can i use flexbox ?" title="Can i use flexbox ?" />
-                    <a href="http://caniuse.com/#feat=flexbox">http://caniuse.com/#feat=flexbox</a>
+                    <a href="http://caniuse.com/#feat=flexbox" target="_blank">http://caniuse.com/#feat=flexbox</a>
                 </section>
                 <section>
                     <h1>Quand l'utiliser ?</h1>
@@ -1024,7 +1025,7 @@ E {
                             <li>Structure d'une page</li>
                             <li>Onglets</li>
                             <li>Menus</li>
-                            <li>Center un élément verticalement dans son container</li>
+                            <li>Centrer un élément verticalement dans son container</li>
                         </ul>
                     </blockquote>
                 </section>
@@ -1070,14 +1071,16 @@ html {
                 </section>
                 <section>
                     <blockquote>
-                        Veiller à toujours importer livrer votre projet avec les fonts embedded dans votre application.
+                        Veiller à toujours livrer votre projet avec les fonts "embedded" dans votre application.
                     </blockquote>
                 </section>
             </section>
             <section>
                 <h2>Media query</h2>
-                <section data-markdown>
-                    > L’attribut média permet de préciser le media sur lequel s’applique la CSS
+                <section data-background='https://media.giphy.com/media/XO4Z0aW2qbTQ4/giphy.gif'>
+                    <blockquote style="width:100%;background-color:rgba(0, 0, 0, 0.5);color:#FFF">
+                        L’attribut média permet de préciser le media sur lequel s’applique la CSS
+                    </blockquote>
                 </section>
                 <section>
                     <br/>
@@ -1259,7 +1262,7 @@ div {
 }
                         </code>
                     </pre>
-                    <a href="http://codepen.io/Tommass/pen/epQYrg" target="_blank">http://codepen.io/Tommass/pen/epQYrg</a>
+                    <a href="http://codepen.io/Tommass/pen/BoGaba" target="_blank">http://codepen.io/Tommass/pen/BoGaba</a>
                 </section>
                 <section>
                     <h2>Colonnes</h2>
@@ -1496,7 +1499,7 @@ header {
                     </blockquote>
                     <ul align="left" style="font-size:26px;">
                         <li>interfaces modernes dans l'ère du temps</li>
-                        <li>incluent des usages très répandus</li>
+                        <li>inclue des usages très répandus</li>
                         <li>bénéfices des études d'un géant du web à moindre coût</li>
                         <li>applications d'un SI homogènotes</li>
                     </ul>
@@ -1521,6 +1524,10 @@ header {
             <section>
                 <section data-section='sass-title' data-background='http://sass-lang.com/assets/img/illustrations/glasses-2087d741.svg'>
                     <h1>SASS</h1>
+
+                    <blockquote>
+                        Syntactically Awesome Style Sheets
+                    </blockquote>
                 </section>
                 <section data-section='sass-sommaire'>
 
@@ -1712,7 +1719,7 @@ nav a {
 
                 </section>
                 <section data-section='best-practice--variables'>
-                        <h2>On ne surcharge jamais les librairies</h2>
+                        <h2>On ne surcharge jamais directement les librairies</h2>
                         <ul>
                             <li> On rend le code moins lisibles, moins robuste aux changements de versions , ...</li>
                             <li> On utilise un sélecteur un précis relatif au <code>data-project='my-component'</code>.</li>
@@ -1726,21 +1733,14 @@ nav a {
 
                 <section data-section='best-practice--flexbow'>
                         <h2>On utilise au maximum les flexbox</h2>
-                        <p>Parce que c'est de la bombe...</p>
-
-                </section>
-
-
-
-                <section data-markdown>
-                    # Bonnes pratiques
-
-                    utiliser au minimum les specificités (.class) (#id)
-                    dans une approche composant, utiliser l'attribut data-
-
+                        <blockquote>Parce que c'est de la bombe !</blockquote>
+                        <img src="https://media.giphy.com/media/zI48Nj9ye0ycM/giphy.gif" style="height:300px;" />
                 </section>
             </section>
-
+            <section>
+                <h2>Un problème ? Une question ?</h2>
+                <blockquote>Venez nous voir</blockquote>
+            </section>
         </div>
     </div>
 
