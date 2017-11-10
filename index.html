@@ -122,6 +122,27 @@
 						Aliquam in malesuada felis. Sed <i>laoreet</i> velit velit, eget dictum nibh suscipit vel.
 					</p>
 				</section>
+				<section>
+					<h2>Le CSS, ça ressemble à ça</h2>
+					<pre style="font-size:14px;width:100%">
+						<code style="css">
+	.quality-box {
+	  width: calc(20% - 20px);
+	  margin: 10px;
+	  display: inline-block;
+	}
+						</code>
+					</pre>
+					<h3>Et ça s'ajoute comme ça</h3>
+					<pre style="font-size:14px;width:100%">
+						<code style="css">
+	<div class="quality-box">
+		{...}
+	</div>
+						</code>
+					</pre>
+					<h5>(Sauf si vous utilisez des CSS modules ou d'autres façons dont on parlera plus tard)</h5>
+				</section>
 			</section>
 
             <section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom" style="color:black;">
@@ -207,7 +228,7 @@ footer {
                 <section>
                     <h1 style="font-size:74px;">Styles conditionnels</h1>
                     <div style="display:flex; align-items:center;">
-                        <div style="width:65%;">
+                        <div style="width:100%;">
                             <pre align="left" style="font-size:14px;width:100%;">
 // Conditional-CSS syntax examples
 [if IE] - Used if the browser is IE
@@ -229,9 +250,6 @@ footer {
 }
                                 </code>
                             </pre>
-                        </div>
-                        <div style="width:35%;">
-                            <img src="images/giphy/your-style.gif" />
                         </div>
                     </div>
                     <a href="http://www.conditional-css.com/usage" style="color:blue;">http://www.conditional-css.com/usage</a>
@@ -654,6 +672,11 @@ table tbody tr td[align="center"] {
                         </tbody>
                     </table>
                 </section>
+				<section>
+					Exemples d'utilisation des pseudo-classes
+					
+					<a href="https://codepen.io/sgoretti/pen/aVJNeZ" target="_blank">https://codepen.io/sgoretti/pen/aVJNeZ</a>
+				</section>
                 <section>
                     <h1 style="font-size:82px;">Pseudo-éléments</h1>
                     <blockquote align="left" style="font-size:26px;width:100%;">Pseudo-éléments : expressions offrant l’accès à de l’information, du contenu, qui n’est pas directement accessible via le DOM</blockquote>
@@ -700,6 +723,16 @@ table tbody tr td[align="center"] {
                         </tbody>
                     </table>
                 </section>
+				<section>
+					Exemples d'utilisation des pseudo-éléments
+					
+					<a href="https://codepen.io/sgoretti/pen/jaBVav" target="_blank">https://codepen.io/sgoretti/pen/jaBVav</a>
+				</section>
+				<section data-markdown>
+					Exemples d'utilisation des pseudo-éléments
+					
+					https://codepen.io/sgoretti/pen/jaBVav
+				</section>
             </section>
             <section data-transition="slide" data-background="#C67B9E" data-background-transition="zoom" style="color:black;">
                 <section>
@@ -762,7 +795,7 @@ table tbody tr td[align="center"] {
                                 <td align="center" class="fragment" data-fragment-index="1" style="color:#00FF7C;">1</td>
                             </tr>
                             <tr>
-                                <td><code>li:first-line {}</code></td>
+                                <td><code>li::first-line {}</code></td>
                                 <td align="center" class="fragment" data-fragment-index="2">0</td>
                                 <td align="center" class="fragment" data-fragment-index="2">0</td>
                                 <td align="center" class="fragment" data-fragment-index="2">0</td>
@@ -797,18 +830,25 @@ table tbody tr td[align="center"] {
                                 <td align="center" class="fragment" data-fragment-index="7" style="color:#00FF7C;">3</td>
                             </tr>
                             <tr>
-                                <td><code>li.red.level {}</code></td>
+                                <td><code>ul ol  li:not(.red) {}</code></td>
                                 <td align="center" class="fragment" data-fragment-index="8">0</td>
                                 <td align="center" class="fragment" data-fragment-index="8">0</td>
-                                <td align="center" class="fragment" data-fragment-index="8" style="color:#00FF7C;">2</td>
                                 <td align="center" class="fragment" data-fragment-index="8" style="color:#00FF7C;">1</td>
+                                <td align="center" class="fragment" data-fragment-index="8" style="color:#00FF7C;">3</td>
+                            </tr>
+                            <tr>
+                                <td><code>li.red.level {}</code></td>
+                                <td align="center" class="fragment" data-fragment-index="9">0</td>
+                                <td align="center" class="fragment" data-fragment-index="9">0</td>
+                                <td align="center" class="fragment" data-fragment-index="9" style="color:#00FF7C;">2</td>
+                                <td align="center" class="fragment" data-fragment-index="9" style="color:#00FF7C;">1</td>
                             </tr>
                             <tr>
                                 <td><code>#x34y {}</code></td>
-                                <td align="center" class="fragment" data-fragment-index="9">0</td>
-                                <td align="center" class="fragment" data-fragment-index="9" style="color:#00FF7C;">1</td>
-                                <td align="center" class="fragment" data-fragment-index="9">0</td>
-                                <td align="center" class="fragment" data-fragment-index="9">0</td>
+                                <td align="center" class="fragment" data-fragment-index="10">0</td>
+                                <td align="center" class="fragment" data-fragment-index="10" style="color:#00FF7C;">1</td>
+                                <td align="center" class="fragment" data-fragment-index="10">0</td>
+                                <td align="center" class="fragment" data-fragment-index="10">0</td>
                             </tr>
                             <tr>
                                 <td><code>style="color:red" {}</code></td>
@@ -819,6 +859,7 @@ table tbody tr td[align="center"] {
                             </tr>
                         </tbody>
                     </table>
+					<div align="center"  style="font-size:16px">Attention: ":not" n'entre pas en compte dans le calcul de la spécificité, mais son contenu oui.</div>
                 </section>
                 <section>
                     <h1>Priorité</h1>
@@ -848,12 +889,7 @@ table tbody tr td[align="center"] {
                 </section>
             </section>
 
-            <section>
-                <section data-markdown>
-                    # Box model
-                    ![Box model](./images/box-model.png)
-                </section>
-            </section>
+           
 
             <section>
                 <section data-markdown>
@@ -939,6 +975,77 @@ E {
                     <a href="http://codepen.io/Tommass/pen/GpYeZX" target="_blank">http://codepen.io/Tommass/pen/GpYeZX</a>
                 </section>
             </section>
+			
+			<section>
+				<section>
+					<h3>z-index et les contextes d'empilement</h3>
+                    <blockquote align="left" style="font-size:24px;width:100%;">
+                        <div>La propriété z-index permet de définir la "profondeur" d'un élément.</div>
+						<div>Un élément avec un z-index élevé sera placé devant un élément avec un z-index inférieur.</div>
+						<div>&nbsp;</div>
+						<div>Cependant, il faut savoir que z-index ne s'applique :</div>
+                        <ul>
+                            <li>qu'aux éléments positionnés (<code>relative</code>, <code>absolute</code> ou <code>fixed</code>)</li>
+                            <li>relativement à son contexte d'empilement</li>
+                        </ul>
+                    </blockquote>
+				</section>
+				<section>
+					<h3>qu'est-ce qu'un contexte d'empilement</h3>
+                    <blockquote align="center" style="font-size:24px;width:100%;">
+                        <div>Il s'agit de l'ensemble des éléments qui ont un parent commun et qui sont placés d'arrière en avant.</div>
+						<div>un élément, quel que soit son z-index, situé dans un contexte d'empilement situé plus bas dans l'ordre d'empilement qu'un second contexte, ne sera jamais affiché devant un élément de ce second contexte.</div>
+						
+						<img src="./images/empilement.png" style="height:352px;" />
+						<div>Ici, l'élément 2 est affiché devant l'élément 1.</div>
+                    </blockquote>
+				
+				</section>
+				
+				<section>
+                    <blockquote align="left" style="font-size:24px;width:100%;">
+                        <div>Un contexte d'empilement est créé :</div>
+                        <ul>
+                            <li>à la racine du document (élément <code>html</code>)</li>
+                            <li>quand la propriété <code>position</code> est différente de <code>static</code> et que le <code>z-index</code> est différent de <code>auto</code></li>
+							<li>lorsque l'opacité est inférieure à 1</li>
+							<li> lorsqu'une des propriétés <code>transform</code> ou <code>filter</code> est différente de <code>none</code></li>
+							<li>quand le <code>z-index</code> est différent de <code>auto</code> pour un élément enfant de Flexbox (même s'il est <code>static</code>)</li>
+							<li>et d'autres...</li>
+                        </ul>
+                    </blockquote>
+					
+					Test des contextes d'empilement :
+					
+					<a href="https://codepen.io/sgoretti/pen/EbWWwp" target="_blank">https://codepen.io/sgoretti/pen/EbWWwp</a>
+					
+				</section>
+				<section>
+					<h3>Ordre d'affichage</h3>
+                    <blockquote align="left" style="font-size:24px;width:100%;">
+                        <div>Au sein de chaque contexte d'empilement, les règles qui définissent lordre d'affichage des éléments sont les suivantes :</div>
+						
+						<ol>
+                            <li>Les bordures et <code>background</code> de l'élément racine du contexte d'empilement</li>
+							<li>les éléments positionnés avec un <code>z-index</code> négatif</li>
+							<li>les éléments <code>block</code> non-positionnés</li>
+							<li>les flottants</li>
+							<li>les éléments <code>inline</code> non-positionnés</li>
+							<li>les éléments positionnés avec un <code>z-index: auto</code> ou <code>z-index: 0</code></li>
+							<li>les éléments positionnés avec un <code>z-index</code> positif</li>
+								
+                        </ol>
+						
+                    </blockquote>
+					
+					Exemple d'empilement tordu sans z-index :					
+					
+					<a href="https://codepen.io/iamvdo/pen/pDABx" target="_blank">https://codepen.io/iamvdo/pen/pDABx</a>
+					
+				</section>
+			
+			</section>
+			
             <section>
                 <h1>Floating</h1>
                 <section>
@@ -960,9 +1067,10 @@ E {
                         <ul>
                             <li>N’est pas considéré par le conteneur</li>
                             <li>Est considéré par ses frangins...</li>
+							<li><code>float: right</code> inverse l'ordre d'affichage des éléments, le premier dans le html étant logiquement affiché le plus à droite..</li>
                         </ul>
                     </blockquote>
-                    <a href="http://codepen.io/Tommass/pen/XmxQQO" target="_blank">http://codepen.io/Tommass/pen/XmxQQO</a>
+                    <a href="https://codepen.io/sgoretti/pen/OOpmrv" target="_blank">https://codepen.io/sgoretti/pen/OOpmrv</a>
                 </section>
                 <section>
                     <br/>
@@ -981,6 +1089,15 @@ E {
                     </p>
                 </section>
             </section>
+			
+			
+			 <section>
+                <section data-markdown>
+                    # Box model
+                    ![Box model](./images/box-model.png)
+                </section>
+            </section>
+			
             <section>
                 <section>
                     <h1 style="font-size:74px;">CSS3 Flexbox</h1>
