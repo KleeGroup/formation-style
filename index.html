@@ -64,36 +64,65 @@
         <div class="slides">
             <section>
                 <section data-markdown>
-                    # Styles
+                    # Formation CSS
                     ### Les bases pour styler vos applications
                     ![FOCUS](./images/logo-focus.png)
                 </section>
                 <section data-markdown>
                     # Sommaire
-                    * Rappel sur les bases du css
-                    * Quelques infos sur SASS
-                    * Get Material Design Lite
-                    * Quelques bonnes pratiques pour styler vos projets
+                    * Les bases du css
+                    * L'utilisation du CSS à Klee :  SASS, CSS modules, etc.
+                    * "Separation of concerns" et bonnes pratiques
                 </section>
             </section>
-
-            <section>
-                <h1>Balises sémantiques</h1>
-                <img src="./images/semantic.png" style="height:200px;" />
-                <pre style="font-size:14px;width:100%">
-                    <code style="html">
-<p>Lorem ipsum &lt;strong&gt;dolor&lt;/strong&gt; sit amet, consectetur adipiscing &lt;b&gt;elit&lt;/b&gt;. Vestibulum at molestie risus.
-Etiam nec est congue, &lt;em&gt;accumsan&lt;/em&gt; sapien quis, viverra justo. Class &lt;u&gt;aptent&lt;/u&gt;
-taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-Aliquam in malesuada felis. Sed &lt;i&gt;laoreet&lt;/i&gt; velit velit, eget dictum nibh suscipit vel.</p>
-                    </code>
-                </pre>
-                <p class="semantic-sample">
-                    Lorem ipsum <strong>dolor</strong> sit amet, consectetur adipiscing <b>elit</b>. Vestibulum at molestie risus.
-                    Etiam nec est congue, <em>accumsan</em> sapien quis, viverra justo. Class <u>aptent</u> taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                    Aliquam in malesuada felis. Sed <i>laoreet</i> velit velit, eget dictum nibh suscipit vel.
-                </p>
-            </section>
+			
+			<section>
+				<section data-markdown>
+					# Le CSS		
+					### Le CSS, ce n'est pas simple
+					> "It’s almost a challenge to ﬁnd a development team that’s working on a codebase that’s more than a couple of years old where the CSS isn’t the most frightening and hated part of that system."
+					> — Andy Hume
+				</section>
+				<section data-markdown>
+					* CSS3 a plus de 300 propriétés et s'enrichit régulièrement
+					* une infinité de déclaration par sélecteurs
+					* une infinité de sélecteurs par élément html
+					* une infinité d'éléments html par sélecteur css
+				</section>
+				<section data-markdown>
+					* 5545 règles pour 9789 sélecteurs sur lemonde.fr
+					* 4525 règles pour 7443 sélecteurs sur figaro.fr
+					
+					
+					à Klee:
+					* 2516 règles pour 2492 sélecteurs pour spocc
+					* 5236 règles pour 5268 sélecteurs sur Linkit
+					* 6141 règles pour 14429 sélecteurs sur Trackit
+				</section>
+			</section>
+			
+			<section>
+				<section data-markdown>
+					#### les styles CSS s'appliquent à des éléments du DOM
+				</section>
+				<section>
+					<h1>Balises sémantiques</h1>
+					<img src="./images/semantic.png" style="height:200px;" />
+					<pre style="font-size:14px;width:100%">
+						<code style="html">
+	<p>Lorem ipsum &lt;strong&gt;dolor&lt;/strong&gt; sit amet, consectetur adipiscing &lt;b&gt;elit&lt;/b&gt;. Vestibulum at molestie risus.
+	Etiam nec est congue, &lt;em&gt;accumsan&lt;/em&gt; sapien quis, viverra justo. Class &lt;u&gt;aptent&lt;/u&gt;
+	taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+	Aliquam in malesuada felis. Sed &lt;i&gt;laoreet&lt;/i&gt; velit velit, eget dictum nibh suscipit vel.</p>
+						</code>
+					</pre>
+					<p class="semantic-sample">
+						Lorem ipsum <strong>dolor</strong> sit amet, consectetur adipiscing <b>elit</b>. Vestibulum at molestie risus.
+						Etiam nec est congue, <em>accumsan</em> sapien quis, viverra justo. Class <u>aptent</u> taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+						Aliquam in malesuada felis. Sed <i>laoreet</i> velit velit, eget dictum nibh suscipit vel.
+					</p>
+				</section>
+			</section>
 
             <section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom" style="color:black;">
                 <section>
@@ -1040,8 +1069,8 @@ E {
                     <img src="./images/flexbox-menu-exo.png" alt="exo flexbox" title="exo-flexbox" />
                     <p>L'exercice : <a href="http://codepen.io/Tommass/pen/wGbMxp" target="_blank">http://codepen.io/Tommass/pen/wGbMxp</a></p>
                     <p style="font-size:22px;color: red;">Attention, vous n'avez pas le droit de toucher aux balises HTML.</p>
-                </section>
-                <section>
+            </section>
+            <section>
                     <h1 style="font-size:74px;">Exercice 2</h1>
                     <blockquote style="width:100%;">
                         Utilisez les propriétés flexbox pour centrer le point comme ci-dessous.
@@ -1487,7 +1516,7 @@ header {
             </section>
             <section>
                 <section data-markdown>
-                    # Beson de doc ?
+                    # Besoin de doc ?
 
                     ## La doc de Mozilla Developer Network
                     https://developer.mozilla.org/fr/docs/Web/CSS
@@ -1505,20 +1534,21 @@ header {
                 <section>
                     <br/>
                     <br/>
+                    <h2>C'est quoi ?</h2>
                     <blockquote style="width:100%;">
                         <b>Des spécifications pour la conception d'interfaces</b>
                     </blockquote>
+                    <ul align="left" style="font-size:26px;">
+                        <li>Guidelines</li>
+                        <li>Bonnes pratiques</li>
+                        <li>Do / Don't</li>
+                        <li>UX / UI</li>
+                    </ul>
                     <br/>
                     <br/>
                     <div style="font-size:26px;">
                         <a href="https://www.google.com/design/spec/material-design/introduction.html" target="_blank">https://www.google.com/design/spec/material-design/introduction.html</a>
                     </div>
-                </section>
-                <section>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <img src="./images/md-specs.png" style="height:550px;" alt="spec md" alt="spec md" />
                 </section>
                 <section>
                     <br/>
@@ -1764,7 +1794,7 @@ nav a {
                 <section data-section='best-practice--variables'>
                         <h2>On ne surcharge jamais directement les librairies</h2>
                         <ul>
-                            <li> On rend le code moins lisibles, moins robuste aux changements de versions , ...</li>
+                            <li> On rend le code moins lisible, moins robuste aux changements de versions , ...</li>
                             <li> On utilise un sélecteur un précis relatif au <code>data-project='my-component'</code>.</li>
 
                         </ul>
@@ -1814,15 +1844,6 @@ nav a {
     });
 
     </script>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-70256271-2', 'auto');
-      ga('send', 'pageview');
-
-    </script>
 </body>
 </html>
