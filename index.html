@@ -102,26 +102,6 @@
 			</section>
 			
 			<section>
-				<section data-markdown>
-					#### les styles CSS s'appliquent à des éléments du DOM
-				</section>
-				<section>
-					<h1>Balises sémantiques</h1>
-					<img src="./images/semantic.png" style="height:200px;" />
-					<pre style="font-size:14px;width:100%">
-						<code style="html">
-	<p>Lorem ipsum &lt;strong&gt;dolor&lt;/strong&gt; sit amet, consectetur adipiscing &lt;b&gt;elit&lt;/b&gt;. Vestibulum at molestie risus.
-	Etiam nec est congue, &lt;em&gt;accumsan&lt;/em&gt; sapien quis, viverra justo. Class &lt;u&gt;aptent&lt;/u&gt;
-	taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-	Aliquam in malesuada felis. Sed &lt;i&gt;laoreet&lt;/i&gt; velit velit, eget dictum nibh suscipit vel.</p>
-						</code>
-					</pre>
-					<p class="semantic-sample">
-						Lorem ipsum <strong>dolor</strong> sit amet, consectetur adipiscing <b>elit</b>. Vestibulum at molestie risus.
-						Etiam nec est congue, <em>accumsan</em> sapien quis, viverra justo. Class <u>aptent</u> taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-						Aliquam in malesuada felis. Sed <i>laoreet</i> velit velit, eget dictum nibh suscipit vel.
-					</p>
-				</section>
 				<section>
 					<h2>Le CSS, ça ressemble à ça</h2>
 					<pre style="font-size:14px;width:100%">
@@ -143,6 +123,25 @@
 					</pre>
 					<h5>(Sauf si vous utilisez des CSS modules ou d'autres façons dont on parlera plus tard)</h5>
 				</section>
+				<section>
+					<h3>les styles CSS s'appliquent à des éléments du DOM</h1>
+					<h1>Balises sémantiques</h1>
+					<img src="./images/semantic.png" style="height:200px;" />
+					<pre style="font-size:14px;width:100%">
+						<code style="html">
+	<p>Lorem ipsum &lt;strong&gt;dolor&lt;/strong&gt; sit amet, consectetur adipiscing &lt;b&gt;elit&lt;/b&gt;. Vestibulum at molestie risus.
+	Etiam nec est congue, &lt;em&gt;accumsan&lt;/em&gt; sapien quis, viverra justo. Class &lt;u&gt;aptent&lt;/u&gt;
+	taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+	Aliquam in malesuada felis. Sed &lt;i&gt;laoreet&lt;/i&gt; velit velit, eget dictum nibh suscipit vel.</p>
+						</code>
+					</pre>
+					<p class="semantic-sample">
+						Lorem ipsum <strong>dolor</strong> sit amet, consectetur adipiscing <b>elit</b>. Vestibulum at molestie risus.
+						Etiam nec est congue, <em>accumsan</em> sapien quis, viverra justo. Class <u>aptent</u> taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+						Aliquam in malesuada felis. Sed <i>laoreet</i> velit velit, eget dictum nibh suscipit vel.
+					</p>
+				</section>
+				
 			</section>
 
             <section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom" style="color:black;">
@@ -978,7 +977,7 @@ E {
 			
 			<section>
 				<section>
-					<h3>z-index et les contextes d'empilement</h3>
+					<h2>z-index et les contextes d'empilement</h2>
                     <blockquote align="left" style="font-size:24px;width:100%;">
                         <div>La propriété z-index permet de définir la "profondeur" d'un élément.</div>
 						<div>Un élément avec un z-index élevé sera placé devant un élément avec un z-index inférieur.</div>
@@ -1098,13 +1097,45 @@ E {
                 </section>
             </section>
 			
+			<section>
+                <section>
+					<h3>La propriété display</h3>
+					<blockquote align="left" style="font-size:24px;width:100%;">
+						<div>La propriété <code>display</code> définit le type de boîte utilisée pour le rendu d'un élément.</div>
+						<div>Elle peut avoir un impact sur la relation de la boite avec ses frères ou sur l'affichage de ses enfants.</div>
+					</blockquote>
+                </section>
+				<section>
+					 <blockquote align="left" style="font-size:26px;width:100%">
+						<div style="font-size:40px">Les valeurs les plus utilisées pour la propriété display :</div>
+						<ul>
+							<li><code>block</code> : l'affichage par défaut. Un élément <code>display: block</code> s'affichera sous son précédent frère non-flottant ou positionné</li>
+							<li><code>inline</code> : l'élément s'affiche à la suite (de façon linéaire) de son précédent frère. Les objets inline n'ont pas de width ni de height (qui sont calculées par rapport au contenu)</li>
+							<li><code>inline-block</code> : affiché à la suite, mais garde les propriétés du block</li>
+							
+						</ul>
+                    </blockquote>
+					
+					<a href="https://codepen.io/sgoretti/pen/bYqrWp" target="_blank">https://codepen.io/sgoretti/pen/bYqrWp</a>
+				</section>
+				<section>
+					 <blockquote align="left" style="font-size:26px;width:100%">
+						<div style="font-size:40px">Les valeurs les plus utilisées pour la propriété display :</div>
+						<ul>
+							<li><code>table</code> et toute la liste des <code>table-*</code> : permet de simuler le fonctionnement d'un tableau avec des divs (un div <code>table</code> contient des divs <code>table-row</code> qui contiennent des divs <code>table-cell</code>, par exemple)</li>
+							<li><code>flex</code> : sera vu plus tard</li>
+							<li><code>grid</code> : sera vu plus tard</li>
+							<li><code>none</code> : l'élément n'est pas affiché et ne prend pas de place sur la page</li>
+						</ul>
+                    </blockquote>
+					
+					<code>display: none</code> illustré dans l'exemple <code>:focus</code> dans : <a href="https://codepen.io/sgoretti/pen/aVJNeZ" target="_blank">https://codepen.io/sgoretti/pen/aVJNeZ</a>
+				</section>
+            </section>
+			
             <section>
                 <section>
                     <h1 style="font-size:74px;">CSS3 Flexbox</h1>
-                    <blockquote>
-                        Nouvelle propriété CSS 3 !
-                    </blockquote>
-                    <img src="./images/giphy/monica1.gif" style="height:200px;" />
                     <pre>
                         <code style="css">
 E {
@@ -1139,7 +1170,6 @@ E {
                             <img src="./images/flex.png" />
                         </div>
                     </div>
-                    <img src="./images/giphy/monica2.gif" style="height:200px;" />
                 </section>
                 <section>
                     <h1 style="font-size:74px;">principales propriétés</h1>
@@ -1160,9 +1190,6 @@ E {
                             <div>Utilisez cette propriété dans vos style CSS</div>
                             <div>Surchargez les propriétés pour les vieux navigateurs si vous avez cette contrainte.</div>
                         </blockquote>
-                        <div>
-                            <img src="./images/giphy/monica3.gif" style="height:180px;" />
-                        </div>
                     </div>
                     <img src="./images/ciu-flexbox.png" alt="Can i use flexbox ?" title="Can i use flexbox ?" />
                     <a href="http://caniuse.com/#feat=flexbox" target="_blank">http://caniuse.com/#feat=flexbox</a>
@@ -1179,30 +1206,56 @@ E {
                     </blockquote>
                 </section>
                 <section>
-                    <h1 style="font-size:74px;">Exercice 1</h1>
-                    <blockquote style="width:100%;">
-                        Utilisez les propriétés flexbox pour afficher les menus comme ci-dessous.
-                    </blockquote>
-                    <img src="./images/flexbox-menu-exo.png" alt="exo flexbox" title="exo-flexbox" />
-                    <p>L'exercice : <a href="http://codepen.io/Tommass/pen/wGbMxp" target="_blank">http://codepen.io/Tommass/pen/wGbMxp</a></p>
-                    <p style="font-size:22px;color: red;">Attention, vous n'avez pas le droit de toucher aux balises HTML.</p>
+                    <h1 style="font-size:74px;">Exercices</h1>
+					<a href="http://flexboxfroggy.com/" target="_blank">http://flexboxfroggy.com/</a>
+				</section>
             </section>
             <section>
-                    <h1 style="font-size:74px;">Exercice 2</h1>
-                    <blockquote style="width:100%;">
-                        Utilisez les propriétés flexbox pour centrer le point comme ci-dessous.
-                    </blockquote>
-                    <img src="./images/flexbox-centre-exo.png" style="height:150px;" alt="exo flexbox" title="exo-flexbox" />
-                    <p>L'exercice : <a href="http://codepen.io/Tommass/pen/zqQryg" target="_blank">http://codepen.io/Tommass/pen/zqQryg</a></p>
-                    <p style="font-size:22px;color: red;">Attention, vous n'avez pas le droit de toucher aux balises HTML.</p>
+                <section>
+					<h1>CSS3 Grid Layout</h1>
+					
+					Les CSS3 Flexbox permettent de positionner plus facilement les élements par rapport à leur conteneur.<br />
+					<br/>Les CSS3 Grid Layout vont nous offrir tous les outils pour faciliter la construction des layout de page, et simplifier la mise en place de comportement responsive.<br />
+					<br/>
+					Si Flexbox est parfait pour gérer des lignes (ou des colonnes), Grid est l'outil permettant de travailler sur les deux dimensions en gérant les alignement de contenu comme on le souhaite.
+				</section>
+				<section>
+                    <h1 style="font-size:74px;">principales propriétés</h1>
+                    <br />
+                    <div>Un lien bien sympa !</div>
+                    <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">https://css-tricks.com/snippets/css/complete-guide-grid/</a>
                 </section>
-            </section>
-            <section>
-                <h1>CSS3 Grid Layout</h1>
-                <blockquote>Coming soon...</blockquote>
-                Les CSS3 Flexbox permettent de positionner plus facilement les élements par rapport à leur conteneur.<br />
-                <br/>Les CSS3 Grid Layout vont nous offrir tous les outils pour faciliter la construction des layout de page, et simplifier la mise en place de comportement responsive.<br />
-                <br/>Ils remplaceront les grilles pour le moment utilisées et fournies par nos librairies (MDL).
+                <section>
+                    <h1 style="font-size:75px;">Can i use it ?</h1>
+                    <div style="display:flex;align-items:center;">
+                        <blockquote style="font-size:22px;">
+                            <div>Si vous comprenez son utilisation et si les navigateurs cible sont compatibles.</div>
+                            <div>Utilisez cette propriété dans vos style CSS</div>
+                            <div>Au pire, surchargez les propriétés pour les vieux navigateurs si vous avez cette contrainte.</div>
+                        </blockquote>
+                    </div>
+                    <img src="./images/ciu-grid.png" alt="Can i use Grid Layout ?" title="Can i use Grid Layout ?" />
+                    <a href="https://caniuse.com/#feat=css-grid" target="_blank">https://caniuse.com/#feat=css-grid</a>
+                </section>
+                <section>
+                    <h1>Quand l'utiliser ?</h1>
+                    <blockquote style="width:100%;">
+                        <ul>
+                            <li>Structure d'une page</li>
+                            <li>Listes (lignes ou cartes)</li>
+                            <li>En association avec flexbox</li>
+                        </ul>
+                    </blockquote>
+                </section>
+                <section>
+                    <h1 style="font-size:74px;">Exercices</h1>
+					<a href="http://cssgridgarden.com/" target="_blank">http://cssgridgarden.com/</a>
+					
+                    <br/>
+                    <br/>
+					Et pour montrer la puissance de grid (et du css)
+					<a href="http://www.hi.agency/deck/#p1" target="_blank">http://www.hi.agency/deck/#p1</a>
+				</section>
             </section>
             <section>
                 <h2>Font</h2>
@@ -1251,7 +1304,7 @@ html {
             </section>
             <section>
                 <h2>Media query</h2>
-                <section data-background='https://media.giphy.com/media/XO4Z0aW2qbTQ4/giphy.gif'>
+                <section>
                     <blockquote style="width:100%;background-color:rgba(0, 0, 0, 0.5);color:#FFF">
                         L’attribut média permet de préciser le media sur lequel s’applique la CSS
                     </blockquote>
@@ -1503,7 +1556,7 @@ La propriété filter permet de réaliser des effets de flou, modifier la teinte
             </section>
             <section>
                 <section>
-                    <h1>Unités</h1>
+                    <h3>Unités</h3>
                     <table style="font-size:22px;">
                         <thead>
                             <tr>
@@ -1512,17 +1565,18 @@ La propriété filter permet de réaliser des effets de flou, modifier la teinte
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><code>%</code></td><td>percentage</td></tr>
-                            <tr><td><code>in</code></td><td>inch</td></tr>
-                            <tr><td><code>cm</code></td><td>centimeter</td></tr>
-                            <tr><td><code>mm</code></td><td>millimeter</td></tr>
-                            <tr><td><code>em</code></td><td>1em is equal to the current font size. 2em means 2 times the size of the current font. E.g., if an element is displayed with a font of 12 pt, then '2em' is 24 pt. The 'em' is a very useful unit in CSS, since it can adapt automatically to the font that the reader uses</td></tr>
-                            <tr><td><code>ex</code></td><td>one ex is the x-height of a font (x-height is usually about half the font-size)</td></tr>
-                            <tr><td><code>pt</code></td><td>point (1 pt is the same as 1/72 inch)</td></tr>
-                            <tr><td><code>pc</code></td><td>pica (1 pc is the same as 12 points)</td></tr>
-                            <tr><td><code>px</code></td><td>pixels (a dot on the computer screen)</td></tr>
-                            <tr><td><code>vw</code></td><td>% of screen width</td></tr>
-                            <tr><td><code>vh</code></td><td>% of screen height</td></tr>
+                            <tr  class="fragment" data-fragment-index="0"><td><code>%</code></td><td>percentage</td></tr>
+                            <tr class="fragment" data-fragment-index="1"><td><code>in</code></td><td>inch</td></tr>
+                            <tr class="fragment" data-fragment-index="2"><td><code>cm</code></td><td>centimeter</td></tr>
+                            <tr class="fragment" data-fragment-index="3"><td><code>mm</code></td><td>millimeter</td></tr>
+                            <tr class="fragment" data-fragment-index="4"><td><code>em</code></td><td>1em is equal to the current font size. 2em means 2 times the size of the current font. E.g., if an element is displayed with a font of 12 pt, then '2em' is 24 pt. The 'em' is a very useful unit in CSS, since it can adapt automatically to the font that the reader uses</td></tr>
+							<tr class="fragment" data-fragment-index="5"><td><code>rem</code></td><td>same as em but taking the root element font size. Allows more consistency for the value of the unit</td></tr>
+                            <tr class="fragment" data-fragment-index="6"><td><code>ex</code></td><td>one ex is the x-height of a font (x-height is usually about half the font-size)</td></tr>
+                            <tr class="fragment" data-fragment-index="7"><td><code>pt</code></td><td>point (1 pt is the same as 1/72 inch)</td></tr>
+                            <tr class="fragment" data-fragment-index="8"><td><code>pc</code></td><td>pica (1 pc is the same as 12 points)</td></tr>
+                            <tr class="fragment" data-fragment-index="9"><td><code>px</code></td><td>pixels (a dot on the computer screen)</td></tr>
+                            <tr class="fragment" data-fragment-index="10"><td><code>vw</code></td><td>% of screen width</td></tr>
+                            <tr class="fragment" data-fragment-index="11"><td><code>vh</code></td><td>% of screen height</td></tr>
                         </tbody>
                     </table>
                 </section>
@@ -1624,92 +1678,38 @@ header {
                     </blockquote>
                 </section>
             </section>
-            <section>
+			<section>
+                <h1>Transition</h1>
                 <section>
-                    <h1> Can i use ?</h1>
+                    <br />
+                    <br />
+                    <br />
+                    <div style="display:flex;align-items:center;">
+                        <pre style="font-size:16px;width:70%;">
+                            <code class="css">
+.bouton {
+    transition: width 0.2s;
+	width: 90px;
+}
 
-                    <a href="http://caniuse.com/" target="_blank">http://caniuse.com</a>
-                </section>
-            </section>
-            <section>
-                <section data-markdown>
-                    # Besoin de doc ?
-
-                    ## La doc de Mozilla Developer Network
-                    https://developer.mozilla.org/fr/docs/Web/CSS
-
-                    ## sur Google
-                    `mdn` + `[mots clés]`
-                </section>
-            </section>
-
-            <section>
-                <h1 style="color:#4A7096;">Material Design</h1>
-                <section data-section='mdl-title' data-background='https://media.giphy.com/media/14rrs4hUiOSZ5C/giphy.gif'>
-
-                </section>
-                <section>
-                    <br/>
-                    <br/>
-                    <h2>C'est quoi ?</h2>
-                    <blockquote style="width:100%;">
-                        <b>Des spécifications pour la conception d'interfaces</b>
-                    </blockquote>
-                    <ul align="left" style="font-size:26px;">
-                        <li>Guidelines</li>
-                        <li>Bonnes pratiques</li>
-                        <li>Do / Don't</li>
-                        <li>UX / UI</li>
-                    </ul>
-                    <br/>
-                    <br/>
-                    <div style="font-size:26px;">
-                        <a href="https://www.google.com/design/spec/material-design/introduction.html" target="_blank">https://www.google.com/design/spec/material-design/introduction.html</a>
+.bouton:hover {
+	width: 110px;
+}
+                            </code>
+                        </pre>
+                    </div>
+                    <div style="font-size:22px;">
+                        La propriété transition permet de créer une animation automatiquement au changement d'une propriété.
                     </div>
                 </section>
-                <section>
-                    <br/>
-                    <br/>
-                    <h2>Concrètement dans mon projet ?</h2>
-                    <blockquote style="width:100%;">
-                        <ul>
-                            <li>Des règles de conception à respecter.</li>
-                            <li>Une libraire graphique et quelques bonnes pratiques</li>
-                        </ul>
-                    </blockquote>
-                    <br/>
-                    <a href="http://www.getmdl.io/" target="_blank">http://www.getmdl.io/</a>
-                </section>
-                <section>
-                    <br/>
-                    <br/>
-                    <h2>Mais pourquoi ?</h2>
-                    <blockquote style="width:100%;">
-                        Parce que cela présente de nombreux intérêts pour nous...
-                    </blockquote>
-                    <ul align="left" style="font-size:26px;">
-                        <li>interfaces modernes dans l'ère du temps</li>
-                        <li>inclue des usages très répandus</li>
-                        <li>bénéfices des études d'un géant du web à moindre coût</li>
-                        <li>applications d'un SI homogènes</li>
-                    </ul>
-                </section>
-                <section>
-                    <br/>
-                    <br/>
-                    <h2>Et aussi...</h2>
-                    <ul align="left" style="font-size:26px;">
-                        <li>remplaçant de bootsrap</li>
-                        <li>libraire graphique légère</li>
-                        <li>composants Material tout prêts</li>
-                        <li>librairie d'icones</li>
-                    </ul>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <a href="https://www.google.com/design/icons/" target="_blank">https://www.google.com/design/icons/</a>
-                </section>
             </section>
+			
+			
+			
+			
+			
+			
+            
 
             <section>
                 <section data-section='sass-title' data-background='http://sass-lang.com/assets/img/illustrations/glasses-2087d741.svg'>
@@ -1927,6 +1927,97 @@ nav a {
                         <img src="https://media.giphy.com/media/zI48Nj9ye0ycM/giphy.gif" style="height:300px;" />
                 </section>
             </section>
+			
+			
+			
+			<section>
+                <section>
+                    <h1> Can i use ?</h1>
+
+                    <a href="http://caniuse.com/" target="_blank">http://caniuse.com</a>
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # Besoin de doc ?
+
+                    ## La doc de Mozilla Developer Network
+                    https://developer.mozilla.org/fr/docs/Web/CSS
+
+                    ## sur Google
+                    `mdn` + `[mots clés]`
+                </section>
+            </section>
+
+            <section>
+                <h1 style="color:#4A7096;">Material Design</h1>
+                <section data-section='mdl-title' data-background='https://media.giphy.com/media/14rrs4hUiOSZ5C/giphy.gif'>
+
+                </section>
+                <section>
+                    <br/>
+                    <br/>
+                    <h2>C'est quoi ?</h2>
+                    <blockquote style="width:100%;">
+                        <b>Des spécifications pour la conception d'interfaces</b>
+                    </blockquote>
+                    <ul align="left" style="font-size:26px;">
+                        <li>Guidelines</li>
+                        <li>Bonnes pratiques</li>
+                        <li>Do / Don't</li>
+                        <li>UX / UI</li>
+                    </ul>
+                    <br/>
+                    <br/>
+                    <div style="font-size:26px;">
+                        <a href="https://www.google.com/design/spec/material-design/introduction.html" target="_blank">https://www.google.com/design/spec/material-design/introduction.html</a>
+                    </div>
+                </section>
+                <section>
+                    <br/>
+                    <br/>
+                    <h2>Concrètement dans mon projet ?</h2>
+                    <blockquote style="width:100%;">
+                        <ul>
+                            <li>Des règles de conception à respecter.</li>
+                            <li>Une libraire graphique et quelques bonnes pratiques</li>
+                        </ul>
+                    </blockquote>
+                    <br/>
+                    <a href="http://www.getmdl.io/" target="_blank">http://www.getmdl.io/</a>
+                </section>
+                <section>
+                    <br/>
+                    <br/>
+                    <h2>Mais pourquoi ?</h2>
+                    <blockquote style="width:100%;">
+                        Parce que cela présente de nombreux intérêts pour nous...
+                    </blockquote>
+                    <ul align="left" style="font-size:26px;">
+                        <li>interfaces modernes dans l'ère du temps</li>
+                        <li>inclue des usages très répandus</li>
+                        <li>bénéfices des études d'un géant du web à moindre coût</li>
+                        <li>applications d'un SI homogènes</li>
+                    </ul>
+                </section>
+                <section>
+                    <br/>
+                    <br/>
+                    <h2>Et aussi...</h2>
+                    <ul align="left" style="font-size:26px;">
+                        <li>remplaçant de bootsrap</li>
+                        <li>libraire graphique légère</li>
+                        <li>composants Material tout prêts</li>
+                        <li>librairie d'icones</li>
+                    </ul>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <a href="https://www.google.com/design/icons/" target="_blank">https://www.google.com/design/icons/</a>
+                </section>
+            </section>
+			
+			
             <section>
                 <h2>Un problème ? Une question ?</h2>
                 <blockquote>Venez nous voir</blockquote>
