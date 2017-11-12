@@ -95,7 +95,6 @@
 					
 					
 					à Klee:
-					* 2516 règles pour 2492 sélecteurs pour spocc
 					* 5236 règles pour 5268 sélecteurs sur Linkit
 					* 6141 règles pour 14429 sélecteurs sur Trackit
 				</section>
@@ -1705,10 +1704,11 @@ header {
             </section>
 			
 			
-			
-			
-			
-			
+			<section>
+                <section data-markdown>
+                    # Comment on utilise le CSS dans nos applications
+                </section>
+            </section>		
             
 
             <section>
@@ -1871,8 +1871,247 @@ nav a {
                 </section>
             </section>
 
+			
+			
+			
+			<section>
+                <section data-section='css-module-title' >
+                    <h2>CSS Modules</h2>
+                </section>
+                <section data-section='css-module-sommaire'>
+				
+					<blockquote>
+					Un des problèmes du CSS, c'est que toutes les classes ont un scope global, sans forcément être stockées dans un même fichier.
+					</blockquote>
+					
+					<blockquote>
+					CSS modules permet d'écrire du CSS scopé localement.
+					</blockquote>
+                </section>
+                <section data-section='css-module-fonctionnement'>
+
+                    <h2>Comment ça marche ?</h2>
+
+                </section>
+                <section data-section='css-modules-styles'>
+                    <div style="display: flex; justify-content: center;width:100%;">
+                        <div style="width:30%;">
+                            <h3>Un fichier de style</h3>
+                            <pre style="font-size:14px;">
+                                <code class="scss">
+.red {
+  font-size: 25px;
+  background-color: red;
+  color: white;
+}
+                                </code>
+                            </pre>
+                        </div>
+                        <div style="width:70%;">
+                            <h3>La source JS du composant</h3>
+                                <pre style="font-size:14px;">
+                                    <code class="css">
+import React from 'react'
+import btn from './styles.css'
+
+export default class CoolButton extends React.Component {
+  render() {
+    return (
+      <button className={btn.red}>{this.props.text}</button>
+    )
+  }
+}
+                                    </code>
+                                
+								</pre>
+                        </div>
+                    </div>
+					
+					<div style="display: flex; justify-content: center;width:100%;">
+						<h3>Le code généré</h3>
+						<div style="width:100%;">
+							<img src="./images/css-modules-result.png" />
+							<img src="./images/css-modules-result2.png" />
+						</div>
+					</div>
+                </section>
+                <section data-section='css-modules-compatibility'>
+                    <ul>
+						<li>CSS modules est compatible avec sass</li>
+						<li>CSS modules fonctionne idéalement avec React</li>
+						<li>CSS modules dispose de fonctionnalités proches de celles de sass (<code>composes</code> agit comme <code>@extend</code>, etc.)
+					</ul>
+					<br/>
+					<br/>
+					<div>
+					<a href="https://css-tricks.com/css-modules-part-1-need/" target="_blank">Petite présentation des CSS modules</a>
+					</div>
+                </section>
+            </section>
+
+			<section>
+                <section >
+                    <h2>Les plugins postCSS</h2>
+					<blockquote>
+					Il s'agit de traitements appliqués au code CSS/SASS afin de générer le ou les fichiers CSS utilisés par l'application.
+					</blockquote>
+                </section>
+                <section data-section='auto-prefixer'>
+					<h3>Auto-prefixer</h3>
+					 <div style="display: flex; justify-content: center;width:100%;">
+                        <div style="width:50%;">
+                            <h4>Fichier source</h4>
+                            <pre style="font-size:14px;">
+                                <code class="scss">
+.rotate90 {
+  transform: rotate(90 deg);
+}
+                                </code>
+                            </pre>
+                        </div>
+                        <div style="width:50%;">
+                            <h4>Fichier généré</h4>
+                                <pre style="font-size:14px;">
+                                    <code class="css">
+.rotate90 {
+  transform: rotate(90 deg);
+  -moz-transform: rotate(90 deg);
+  -webkit-transform: rotate(90 deg);
+  -ms-transform: rotate(90 deg);
+}
+                                    </code>
+                                
+								</pre>
+                        </div>
+                    </div>
+					
+                </section>
+                <section data-section='CSS-next'>
+
+                    <h3>CSS-next</h3>
+					<blockquote>
+					Il s'agit d'un ensemble d'adaptations au CSS permettant d'utiliser des fonctionnalités avancées que le CSS n'offre pas (nesting, variables, etc.)
+					</blockquote>
+					<div>
+					<a href="http://cssnext.io/" target="_blank">Plus d'infos ici</a>
+
+                </section>
+            </section>
+
+			<section>
+				<section>
+					<h2>Separation of concerns ?</h2>
+				</section>
+				<section>
+					<h3>C'est quoi ?</h3>
+					<blockquote>
+					La séparation des préocccupations, c'est le fait que chaque couche, chaque langage, ne doit s'occuper que de ce pour quoi il est prévu.
+					</blockquote>
+				</section>
+				<section>
+					<h3>Ca veut dire quoi ?</h3>
+					<div>
+						<ul>
+							<li>html est fait pour organiser du contenu sur une page.</li>
+							<li>CSS est fait pour controller l'apparence de la page.</li>
+							<li>Javascript est fait pour gérer les interactions avec l'utilisateur.</li>
+						</ul>
+						
+					</div>
+					<br/>
+					<div>
+					Donc, si j'ai des informations touchant à l'apparence de la page dans mon html, je ne respecte pas la séparation !
+					</div>					
+								
+					
+				</section>
+				<section>
+					<h3>Euh, un exemple ?</h3>
+					<div style="display: flex; justify-content: center;width:100%;">
+                        <div style="width:30%;">
+                            <pre style="font-size:14px;">
+                                <code class="html">
+<p class="text-center">
+    Hello there!
+</p>
+                                </code>
+                            </pre>
+                        </div>
+                        <div style="width:70%;">
+                            <div>
+								Une classe <code>.text-center</code> ? Le nom reflète directement la façon dont est affiché l'élément, il s'agit de style.
+								<br/>
+								Cela ne respecte pas la séparation !
+							</div>
+                        </div>
+                    </div>
+				</section>
+				
+				<section>
+					<h4>Une solution"</h4>
+					<div style="display: flex; justify-content: center;width:100%;">
+                       <div style="display: flex; justify-content: center;width:100%;">
+                        <div style="width:50%;">
+                            <pre style="font-size:14px;">
+                                <code class="css">
+.greeting {
+    text-align: center;
+}
+                                </code>
+                            </pre>
+                        </div>
+                       <div style="width:50%;">
+                            <pre style="font-size:14px;">
+                                <code class="html">
+<p class="greeting">
+    Hello there!
+</p>
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+				</section>
+				<section>
+					<h3>L'approche BEM</h3>
+					<h4>Block Element Modifier</h4>
+					<div style="font-size: 22px;text-align: left; width: 100%">
+					Il s'agit de structurer le CSS avec des noms de classes reflétant :
+					<ul>
+						<li class="fragment" data-fragment-index="0">le Block auquel s'applique la classe : <code>input</code>, <code>button</code>, <code>header</code>, etc. ou le nom du composant, par exemple</li>
+						<li class="fragment" data-fragment-index="1">l'Element de ce Block qui est concerné : il s'agit d'une indication plus détaillée. Par exemple, pour le Block header, on pourrait avoir les éléments : title, icons, searchbar, etc. </li>
+						<li class="fragment" data-fragment-index="2">le Modifier : il s'agit de l'état dans lequel se trouve l'élément qu'on souhaite représenter. On aura un Modifier différent par état. Pour le Block header, et l'Element searchbar, on pourra avoir : selected, disabled ou hidden</li>
+					</ul>
+					<br/>
+					<div class="fragment" data-fragment-index="3">Le tout créant la classe CSS <code>.Block-Element--Modifier</code>
+					</div>
+					</div>
+					
+				</section>
+				
+				<section>
+					<h3>Le problème</h3>
+					<h4>Parce qu'il en faut un</h4>
+					<div style="font-size: 22px;text-align: left: width: 80%">
+					Ce n'est pas très réutilisable.
+					<br/>
+					Pour y palier :
+					<ul>
+						<li>soit utiliser des noms d'éléments plus génériques</li>
+						<li>soit utiliser les propriétés d'héritage des traitements postcss (type <code>@extend</code> de sass ou <code>composes</code> de css-modules)
+					</div>
+					
+				</section>
+				
+				<section>
+					<h3>Et donc ?</h3>					
+				</section>
+			
+				
+			</section>
+			
+			
             <section>
-                <section data-section='best-practice--title' data-background='https://media.giphy.com/media/12fWLm0gSY8kJa/giphy.gif'>
+                <section data-section='best-practice--title'>
                     <h1>Best practices</h1>
                 </section>
                 <section data-section='best-practice--variables'>
@@ -1883,9 +2122,9 @@ nav a {
                         <h2>On a une logique composant </h2>
 
                         <ul>
-                            <li>On a un fichier par composant (dans le même dossier que le composant)</li>
-                            <li>On utlise des selecteurs <code>data-project</code>, pas de <code>class, id</code></li>
-                            <li>On utilise le nesting et le <code>&</code></li>
+                            <li>On a un fichier par composant (dans le même dossier que le composant), que ce soit en CSS moduless ou en SASS</li>
+                            <li>En SASS, on utlise des selecteurs <code>data-project</code>, ou une nomenclature type BEM</li>
+                            <li>On utilise le nesting (avec parcimonie : 2 ou 3 niveaux de profondeur au plus) et le <code>&</code></li>
                         </ul>
                         <pre>
                             <code class='scss'>
@@ -1906,6 +2145,15 @@ nav a {
                 <section data-section='best-practice--variables'>
                         <h2>On utilise au maximum les propriétés CSS récentes</h2>
                         <p>On gère au cas par cas les problèmes spécifiques avec des styles conditionnels, on présente au client un mode dégradé graphiquement pour les vieux browsers...</p>
+						
+						<pre>
+                            <code class='scss'>
+.quality-title {
+	background: $colorGradient1;
+	background: linear-gradient(0deg, $colorGradient1, $colorGradient2);
+}
+                            </code>
+                        </pre>
 
                 </section>
                 <section data-section='best-practice--variables'>
@@ -1923,8 +2171,7 @@ nav a {
 
                 <section data-section='best-practice--flexbow'>
                         <h2>On utilise au maximum les flexbox</h2>
-                        <blockquote>Parce que c'est de la bombe !</blockquote>
-                        <img src="https://media.giphy.com/media/zI48Nj9ye0ycM/giphy.gif" style="height:300px;" />
+                        <h3>Et si on peut, on ne s'interdit pas d'utiliser grid</h3>
                 </section>
             </section>
 			
