@@ -124,7 +124,7 @@
 				</section>
 				<section>
 					<h3>les styles CSS s'appliquent à des éléments du DOM</h1>
-					<h1>Balises sémantiques</h1>
+					<h2>Balises sémantiques</h2>
 					<img src="./images/semantic.png" style="height:200px;" />
 					<pre style="font-size:14px;width:100%">
 						<code style="html">
@@ -138,6 +138,21 @@
 						Lorem ipsum <strong>dolor</strong> sit amet, consectetur adipiscing <b>elit</b>. Vestibulum at molestie risus.
 						Etiam nec est congue, <em>accumsan</em> sapien quis, viverra justo. Class <u>aptent</u> taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
 						Aliquam in malesuada felis. Sed <i>laoreet</i> velit velit, eget dictum nibh suscipit vel.
+					</p>
+				</section>
+				<section>
+					<h3>En passant</h3>
+					<p>
+					Les <code>&lt;div&gt;</code> sont faits pour afficher des blocs de contenus.
+					</p>
+					
+					<p>
+					Les <code>&lt;span&gt;</code> sont faits pour afficher du texte de façon linéaire.
+					</p>
+					
+					<p>
+					On ne met pas de <code>&lt;div&gt;</code> dans des <code>&lt;span&gt;</code>.
+					
 					</p>
 				</section>
 				
@@ -156,7 +171,7 @@
                     <h1 style="font-size:68px;">Au sein des pages</h1>
                     <ul style="font-size:22px;">
                         <li>Import de feuille de style</li>
-                        <li>Embebed style <i class="material-icons" style="color:red;font-size:20px;">error_outline</i></li>
+                        <li>Embedded style <i class="material-icons" style="color:red;font-size:20px;">error_outline</i></li>
                         <li>Inline style <i class="material-icons" style="color:red;font-size:20px;">error_outline</i></li>
                     </ul>
                     <pre style="font-size:14px;width:100%">
@@ -726,11 +741,6 @@ table tbody tr td[align="center"] {
 					
 					<a href="https://codepen.io/sgoretti/pen/jaBVav" target="_blank">https://codepen.io/sgoretti/pen/jaBVav</a>
 				</section>
-				<section data-markdown>
-					Exemples d'utilisation des pseudo-éléments
-					
-					https://codepen.io/sgoretti/pen/jaBVav
-				</section>
             </section>
             <section data-transition="slide" data-background="#C67B9E" data-background-transition="zoom" style="color:black;">
                 <section>
@@ -751,7 +761,7 @@ table tbody tr td[align="center"] {
                                 </tr>
                                 <tr>
                                     <td>C</td>
-                                    <td>nombre de classes et de pseudo-classes dans le sélecteur</td>
+                                    <td>nombre de classes, de pseudo-classes et d'attributs dans le sélecteur</td>
                                 </tr>
                                 <tr>
                                     <td>D</td>
@@ -1087,16 +1097,37 @@ E {
                     </p>
                 </section>
             </section>
+			<section>
+				<section>
+					<h3>Petit exercice de positionnement</h3>
+					
+					<a href="https://codepen.io/sgoretti/pen/vWmpYz" target="_blank">https://codepen.io/sgoretti/pen/vWmpYz</a>
+					
+					<br/>
+					<br/>
+					<div style="font-size: 22px;text-align:left;">
+					Dans l'exemple, veuillez :
+						<ul>
+							<li>faire en sorte que le menu de gauche y reste, quelque soit le scroll sur la page</li>
+							<li>que le menu de gauche soit devant l'entête</li>
+							<li>que l'entête reste en haut, puis soit fixe en haut quel que soit le scroll</li>
+							<li>que l'icône soit à droite dans l'entête</li>
+						</ul>
+					<br/>
+					en ne modifiant que les styles header, nav et .header-icon à l'aide de position, z-index et float.
+					</div>
+				</section>
+			</section>
 			
 			
-			 <section>
+			 <section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom" style="color:black;">
                 <section data-markdown>
                     # Box model
                     ![Box model](./images/box-model.png)
                 </section>
             </section>
 			
-			<section>
+			<section data-transition="slide" data-background="#7BAFC6" data-background-transition="zoom" style="color:black;">
                 <section>
 					<h3>La propriété display</h3>
 					<blockquote align="left" style="font-size:24px;width:100%;">
@@ -1132,7 +1163,7 @@ E {
 				</section>
             </section>
 			
-            <section>
+            <section data-transition="slide" data-background="#C67B9E" data-background-transition="zoom" style="color:black;">
                 <section>
                     <h1 style="font-size:74px;">CSS3 Flexbox</h1>
                     <pre>
@@ -1209,9 +1240,9 @@ E {
 					<a href="http://flexboxfroggy.com/" target="_blank">http://flexboxfroggy.com/</a>
 				</section>
             </section>
-            <section>
+            <section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom" style="color:black;">
                 <section>
-					<h1>CSS3 Grid Layout</h1>
+					<h3>CSS3 Grid Layout</h3>
 					
 					Les CSS3 Flexbox permettent de positionner plus facilement les élements par rapport à leur conteneur.<br />
 					<br/>Les CSS3 Grid Layout vont nous offrir tous les outils pour faciliter la construction des layout de page, et simplifier la mise en place de comportement responsive.<br />
@@ -1301,7 +1332,7 @@ html {
                     </blockquote>
                 </section>
             </section>
-            <section>
+            <section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom" style="color:black;">
                 <h2>Media query</h2>
                 <section>
                     <blockquote style="width:100%;background-color:rgba(0, 0, 0, 0.5);color:#FFF">
@@ -1401,9 +1432,9 @@ html {
                     <a href="https://developer.mozilla.org/fr/docs/Web/CSS/Media_queries">https://developer.mozilla.org/fr/docs/Web/CSS/Media_queries</a>
                 </section>
             </section>
-            <section>
+            <section  data-transition="slide" data-background="#7BAFC6" data-background-transition="zoom" style="color:black;">
                 <section data-markdown>
-                    # Améliorations CSS3
+                    ## Améliorations CSS3
                 </section>
                 <section>
                     <h2>Text wrapping</h2>
@@ -1553,7 +1584,7 @@ La propriété filter permet de réaliser des effets de flou, modifier la teinte
                     <a href="http://html5-demos.appspot.com/static/css/filters/index.html" target="_blank">http://html5-demos.appspot.com/static/css/filters/index.html</a>
                 </section>
             </section>
-            <section>
+            <section data-transition="slide" data-background="#C67B9E" data-background-transition="zoom" style="color:black;"">
                 <section>
                     <h3>Unités</h3>
                     <table style="font-size:22px;">
@@ -1580,7 +1611,7 @@ La propriété filter permet de réaliser des effets de flou, modifier la teinte
                     </table>
                 </section>
             </section>
-            <section>
+            <section  data-transition="slide" data-background="#4d7e65" data-background-transition="zoom" style="color:black;">
                 <h1>Animations</h1>
                 <section>
                     <br/>
@@ -1629,7 +1660,7 @@ header {
                     </p>
                 </section>
             </section>
-            <section>
+            <section  data-transition="slide" data-background="#4d7e65" data-background-transition="zoom" style="color:black;">
                 <h1>Transformation</h1>
                 <section>
                     <br />
@@ -1677,7 +1708,7 @@ header {
                     </blockquote>
                 </section>
             </section>
-			<section>
+			<section  data-transition="slide" data-background="#7BAFC6" data-background-transition="zoom" style="color:black;">
                 <h1>Transition</h1>
                 <section>
                     <br />
@@ -1704,7 +1735,7 @@ header {
             </section>
 			
 			
-			<section>
+			<section data-transition="slide" data-background="#C67B9E" data-background-transition="zoom" style="color:black;">
                 <section data-markdown>
                     # Comment on utilise le CSS dans nos applications
                 </section>
@@ -1998,7 +2029,7 @@ export default class CoolButton extends React.Component {
                 </section>
             </section>
 
-			<section>
+			<section  data-transition="slide" data-background="#C67B9E" data-background-transition="zoom" style="color:black;">
 				<section>
 					<h2>Separation of concerns ?</h2>
 				</section>
@@ -2196,78 +2227,48 @@ export default class CoolButton extends React.Component {
                 </section>
             </section>
 
-            <section>
-                <h1 style="color:#4A7096;">Material Design</h1>
-                <section data-section='mdl-title' data-background='https://media.giphy.com/media/14rrs4hUiOSZ5C/giphy.gif'>
+           <section>
+				<section >
+                   
+                    <h3> Pour aller plus loin</h3>
+                </section>
+				<section>
+                    <h3>Une des meilleures "formations" en ligne</h3>
 
+                    <a href="http://iamvdo.me/blog/ce-que-vous-avez-toujours-voulu-savoir-sur-css" target="_blank">http://iamvdo.me/blog/ce-que-vous-avez-toujours-voulu-savoir-sur-css</a>
+					
+					<h3>CSS comparé à d'autres façon de styler</h3>
+					<a href="https://developer.telerik.com/topics/web-development/love-letter-css/" target="_blank">https://developer.telerik.com/topics/web-development/love-letter-css/</a>
                 </section>
-                <section>
-                    <br/>
-                    <br/>
-                    <h2>C'est quoi ?</h2>
-                    <blockquote style="width:100%;">
-                        <b>Des spécifications pour la conception d'interfaces</b>
-                    </blockquote>
-                    <ul align="left" style="font-size:26px;">
-                        <li>Guidelines</li>
-                        <li>Bonnes pratiques</li>
-                        <li>Do / Don't</li>
-                        <li>UX / UI</li>
-                    </ul>
-                    <br/>
-                    <br/>
-                    <div style="font-size:26px;">
-                        <a href="https://www.google.com/design/spec/material-design/introduction.html" target="_blank">https://www.google.com/design/spec/material-design/introduction.html</a>
-                    </div>
+				<section>
+                    <h3>Sur la façon de faire du CSS</h3>
+
+                    <a href="https://www.youtube.com/watch?v=ZpFdyfs03Ug" target="_blank">https://www.youtube.com/watch?v=ZpFdyfs03Ug</a>
+					<a href="https://adamwathan.me/css-utility-classes-and-separation-of-concerns/" target="_blank">https://adamwathan.me/css-utility-classes-and-separation-of-concerns/</a>
                 </section>
-                <section>
-                    <br/>
-                    <br/>
-                    <h2>Concrètement dans mon projet ?</h2>
-                    <blockquote style="width:100%;">
-                        <ul>
-                            <li>Des règles de conception à respecter.</li>
-                            <li>Une libraire graphique et quelques bonnes pratiques</li>
-                        </ul>
-                    </blockquote>
-                    <br/>
-                    <a href="http://www.getmdl.io/" target="_blank">http://www.getmdl.io/</a>
+				<section>
+                    <h3>CSS et JS</h3>
+
+                    <a href="https://medium.com/seek-blog/a-unified-styling-language-d0c208de2660" target="_blank">https://medium.com/seek-blog/a-unified-styling-language-d0c208de2660</a>
+					
+					<h3>Slack aime grid</h3>
+					<a href="https://slack.engineering/rebuilding-slack-com-b124c405c193" target="_blank">https://slack.engineering/rebuilding-slack-com-b124c405c193</a>
                 </section>
-                <section>
-                    <br/>
-                    <br/>
-                    <h2>Mais pourquoi ?</h2>
-                    <blockquote style="width:100%;">
-                        Parce que cela présente de nombreux intérêts pour nous...
-                    </blockquote>
-                    <ul align="left" style="font-size:26px;">
-                        <li>interfaces modernes dans l'ère du temps</li>
-                        <li>inclue des usages très répandus</li>
-                        <li>bénéfices des études d'un géant du web à moindre coût</li>
-                        <li>applications d'un SI homogènes</li>
-                    </ul>
-                </section>
-                <section>
-                    <br/>
-                    <br/>
-                    <h2>Et aussi...</h2>
-                    <ul align="left" style="font-size:26px;">
-                        <li>remplaçant de bootsrap</li>
-                        <li>libraire graphique légère</li>
-                        <li>composants Material tout prêts</li>
-                        <li>librairie d'icones</li>
-                    </ul>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <a href="https://www.google.com/design/icons/" target="_blank">https://www.google.com/design/icons/</a>
-                </section>
-            </section>
+				<section>
+					<h4>Quelques articles sur des choses qui semblent simples, mais en fait, non.</h4>
+					<a href="https://iamvdo.me/blog/css-avance-metriques-des-fontes-line-height-et-vertical-align" target="_blank">https://iamvdo.me/blog/css-avance-metriques-des-fontes-line-height-et-vertical-align</a>
+					
+					<a href="https://www.smashingmagazine.com/2017/05/fluid-responsive-typography-css-poly-fluid-sizing/" target="_blank">https://www.smashingmagazine.com/2017/05/fluid-responsive-typography-css-poly-fluid-sizing/</a>
+					
+					<h4>Et un sur les contextes d'empilement</h4>
+					<a href="https://iamvdo.me/blog/comprendre-z-index-et-les-contextes-dempilement" target="_blank">https://iamvdo.me/blog/comprendre-z-index-et-les-contextes-dempilement</a>
+					
+				</section>
+		   </section>
 			
 			
             <section>
                 <h2>Un problème ? Une question ?</h2>
-                <blockquote>Venez nous voir</blockquote>
             </section>
         </div>
     </div>
