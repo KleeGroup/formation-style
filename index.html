@@ -1240,7 +1240,7 @@ E {
 					<a href="http://flexboxfroggy.com/" target="_blank">http://flexboxfroggy.com/</a>
 				</section>
             </section>
-            <section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom" style="color:black;">
+            <section data-transition="slide" data-background="#315f37" data-background-transition="zoom" style="color:black;">
                 <section>
 					<h3>CSS3 Grid Layout</h3>
 					
@@ -1259,13 +1259,14 @@ E {
                     <h1 style="font-size:75px;">Can i use it ?</h1>
                     <div style="display:flex;align-items:center;">
                         <blockquote style="font-size:22px;">
-                            <div>Si vous comprenez son utilisation et si les navigateurs cible sont compatibles.</div>
-                            <div>Utilisez cette propriété dans vos style CSS</div>
+                            <div>Si vous comprenez son utilisation et si les navigateurs cibles sont compatibles,</div>
+                            <div>Utilisez cette propriété dans vos style CSS.</div>
                             <div>Au pire, surchargez les propriétés pour les vieux navigateurs si vous avez cette contrainte.</div>
                         </blockquote>
                     </div>
                     <img src="./images/ciu-grid.png" alt="Can i use Grid Layout ?" title="Can i use Grid Layout ?" />
                     <a href="https://caniuse.com/#feat=css-grid" target="_blank">https://caniuse.com/#feat=css-grid</a>
+					<a href="https://www.smashingmagazine.com/2017/11/css-grid-supporting-browsers-without-grid/" target="_blank">https://www.smashingmagazine.com/2017/11/css-grid-supporting-browsers-without-grid/</a>
                 </section>
                 <section>
                     <h1>Quand l'utiliser ?</h1>
@@ -2072,7 +2073,7 @@ export default class CoolButton extends React.Component {
                             <div>
 								Une classe <code>.text-center</code> ? Le nom reflète directement la façon dont est affiché l'élément, il s'agit de style.
 								<br/>
-								Cela ne respecte pas la séparation !
+								Ce type de classe utilisaite ne respecte pas la séparation.
 							</div>
                         </div>
                     </div>
@@ -2122,19 +2123,33 @@ export default class CoolButton extends React.Component {
 				<section>
 					<h3>Le problème</h3>
 					<h4>Parce qu'il en faut un</h4>
-					<div style="font-size: 22px;text-align: left: width: 80%">
+					<div style="font-size: 22px;text-align: left; width: 80%">
 					Ce n'est pas très réutilisable.
 					<br/>
 					Pour y palier :
 					<ul>
 						<li>soit utiliser des noms d'éléments plus génériques</li>
-						<li>soit utiliser les propriétés d'héritage des traitements postcss (type <code>@extend</code> de sass ou <code>composes</code> de css-modules)
+						<li>soit utiliser les propriétés d'héritage des traitements postcss (type <code>@extend</code> de sass ou <code>composes</code> de css-modules)</li>
+					</ul>
 					</div>
 					
 				</section>
 				
 				<section>
-					<h3>Et donc ?</h3>					
+					<h3>Et donc ?</h3>		
+					<div style="font-size: 22px;text-align: left; width: 100%">
+					Il n'y a pas de solution miracle.
+					<br/>
+					On conseille de :
+					<ul>
+						<li>utiliser une base de nommage de classe type BEM (convention à définir avec le responable technique du projet)</li>
+						<li>pour vos composants, avoir un fichier par composant</li>
+						<li>pour les vues, avoir un fichier par module</li>
+						<li>avoir un fichier contenant des classes utilitaires</li>
+					</ul>
+					<br/>
+					Le but est d'avoir un code lisible et maintenable.
+					</div>					
 				</section>
 			
 				
